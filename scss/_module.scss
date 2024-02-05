@@ -1,0 +1,176 @@
+@use "vars" as *;
+
+/* ====================================================
+Layout
+==================================================== */
+.wrapper{
+	margin-top: 118px;
+	@include mq{
+		margin-top: 70px;
+	}
+}
+
+.inner{
+	width: 90%;
+	margin: 0 auto;
+	max-width: 1200px;
+	@include mq() {
+		width: 100%;
+		padding: 0 15px;
+	}
+	&--lg{
+		max-width: 1290px;
+	}
+}
+
+
+
+.form-control{
+	width: 100%;
+	height: 50px;
+	border-radius: 8px;
+	border: 1px solid #CBD4E1;
+	padding: 10px 16px;
+	@include font-size(16);
+	appearance: none;
+	&::-ms-input-placeholder { /* Edge 12-18 */
+		color: #94A3B8;
+	}
+	&::placeholder {
+		color: #94A3B8;
+	}
+	&--select{
+		background: #fff url(../img/common/arrow-down.png) no-repeat right 15px center/24px 24px;
+	}
+	&--textarea{
+		height: 114px;
+		width: 100%;
+		resize: none;
+	}
+	&--gray{
+		background: linear-gradient(0deg, #F1F4F9, #F1F4F9), linear-gradient(0deg, #CBD4E1, #CBD4E1);
+	}
+}
+
+.form-group{
+	padding-top: 20px;
+	position: relative;
+	margin-bottom: 23px;
+	@include mq{
+		margin-bottom: 14px;
+	}
+	&:last-of-type{
+		margin-bottom: 0;
+	}
+	&__label{
+		@include font-size(16);
+		font-weight: 600;
+		position: absolute;
+		top: 5px;
+		left: 15px;
+		display: inline-block;
+		background: #fff;
+		z-index: 2;
+		padding: 0 10px;
+		span{
+			color: #ED2649;
+			margin-right: 7px;
+			&.tooltips{
+				margin-left: 7px;
+				margin-right: 0;
+				position: relative;
+				bottom: 2px;
+				cursor: pointer;
+				@include fn-hover;
+			}
+		}
+	}
+	&__input{
+		position: relative;
+		input{
+			width: 100%;
+			height: 50px;
+			border-radius: 8px;
+			border: 1px solid #CBD4E1;
+			padding: 10px 16px;
+			@include font-size(16);
+			@include mq{
+				padding: 10px 22px;
+			}
+			&::-ms-input-placeholder { /* Edge 12-18 */
+				color: #94A3B8;
+			}
+			&::placeholder {
+				color: #94A3B8;
+			}
+			&.has-value{
+				background: #F1F4F9;
+			}
+		}
+		.toggle-pass{
+			width: 20px;
+			height: 20px;
+			display: block;
+			background: url(../img/common/ico-eye.png) no-repeat center/100%;
+			top: 17px;
+			right: 17px;
+			position: absolute;
+			z-index: 2;
+			cursor: pointer;
+		}
+	}
+	.tooltips-txt{
+		color: #000;
+		max-width: 260px;
+		width: 100%;
+		width: 100%;
+		position: absolute;
+		border: 1px solid #E2E8F0;
+		border-radius: 12px;
+		padding: 12px 16px;
+		@include fts(14, 19.6);
+		background: #fff;
+		z-index: 2;
+		top: 30px;
+		left: 133px;
+		opacity: 0;
+		visibility: hidden;
+		transition: all .3s;
+		@include mq{
+			max-width: 190px;
+			@include font-size(12);
+			left: 146px;
+		}
+		.arrow{
+			position: absolute;
+			display: block;
+			width: 1rem;
+			height: 0.5rem;
+			top: calc((0.5rem + 1px) * -1);
+			margin: 0 0.3rem;
+			&:after, &:before{
+				position: absolute;
+				display: block;
+				content: "";
+				border-color: transparent;
+				border-style: solid;
+				border-width: 0 0.5rem 0.5rem 0.5rem;
+				
+			}
+			&:after{
+				top: 1px;
+				border-bottom-color: #fff;
+			}
+			&::before{
+				top: 0;
+				border-bottom-color: rgba(0,0,0,.25);
+			}
+		}
+	}
+	&.is-show{
+		.tooltips-txt{
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}

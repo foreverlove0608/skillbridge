@@ -1,0 +1,52 @@
+@use 'vars' as *;
+
+.contact-page{
+    padding: 82px 0;
+    background: #F6F8FC;
+    min-height: 100vh;
+    @include mq{
+        padding: 50px 0;
+    }
+    &__wp{
+        max-width: 910px;
+        width: 100%;
+        margin: 0 auto;
+        background: #fff;
+        padding: 50px 30px;
+        border-radius: 16px;
+        @include mq{
+            padding: 24px 20px;
+        }
+        .c-ttl__02{
+            width: 100%;
+            text-align: center;
+            @include mq(md-min){
+                margin-bottom: 48px;
+            }
+        }
+        
+        &-list{
+            margin: 0 -15px;
+            @include flex(0, 0, wrap);
+            .form-group{
+                width: 50%;
+                padding: 20px 15px 0;
+                margin-bottom: 27px;
+                @include mq{
+                    width: 100%;
+                }
+                &:last-of-type{
+                    width: 100%;
+                    @include mq{
+                        margin-bottom: 0;
+                    }
+                }
+                &__label{
+                    @include mq(md-min){
+                        left: 28px;
+                    }
+                }
+            }
+        }
+    }
+}

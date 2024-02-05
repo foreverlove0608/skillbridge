@@ -1,0 +1,87 @@
+<section class="profile-user">
+    <div class="inner inner--lg">
+        <div class="alert-success">
+            <span>登録が完了しました。</span>
+            <a href="#" class="alert-success__close js-close-alert"></a>
+        </div>
+        <h1 class="c-ttl__02">ユーザー情報</h1>
+        <div class="profile-user__wp">
+            <div class="profile-user__left">
+                <div class="profile-user__img">
+                    <div class="profile-user__img-thumb">
+                        <img src="<%= RELATIVE_PATH %>img/profile/img-user.png" alt="" width="">
+                    </div>
+                    <span class="profile-user__img-ico">
+                        <img src="<%= RELATIVE_PATH %>img/profile/ico-upload.png" alt="" width="">
+                    </span>
+                </div>
+                <h2 class="profile-user__name">三森 一輝</h2>
+                <ul class="profile-user__control">
+                    <li class="profile-user__control-item is-active"><a href="/profile/">プロフィール</a></li>
+                    <li class="profile-user__control-item"><a href="/profile/changepass.html">パスワード変更</a></li>
+                    <li class="profile-user__control-item"><a href="/logout.html" class="js-logout">ログアウト</a></li>
+                </ul>
+            </div>
+            <div class="profile-user__right">
+                <form action="#" method="post" class="profile-user__form">
+                    <h3 class="profile-user__form-ttl">プロフィール</h3>
+                    <dl class="form-group">
+                        <dt class="form-group__label"><span>*</span>名前</dt>
+                        <dd class="form-group__input">
+                            <input type="text" class="form-control form-control--gray" value="三森 一輝" placeholder="三森 一輝">
+                        </dd>
+                    </dl>
+                    <dl class="form-group">
+                        <dt class="form-group__label"><span>*</span>生年月日</dt>
+                        <dd class="form-group__input">
+                            <input type="text" class="form-control form-control--gray" value="1980年10月10日" placeholder="1980年10月10日">
+                        </dd>
+                    </dl>
+                    <dl class="form-group">
+                        <dt class="form-group__label"><span>*</span>メールアドレス</dt>
+                        <dd class="form-group__input">
+                            <input type="text" class="form-control form-control--gray" value="test@skillbridge.co.jp" placeholder="test@skillbridge.co.jp">
+                        </dd>
+                    </dl>
+                    <dl class="form-group">
+                        <dt class="form-group__label">性別</dt>
+                        <dd class="form-group__input">
+                            <input type="text" class="form-control form-control--gray" value="男" placeholder="男">
+                        </dd>
+                    </dl>
+                    <dl class="form-group">
+                        <dt class="form-group__label">会社名</dt>
+                        <dd class="form-group__input">
+                            <input type="text" class="form-control form-control--gray" value="" placeholder="あなたの会社名を入力してください">
+                        </dd>
+                    </dl>
+                    <dl class="form-group">
+                        <dt class="form-group__label">役職</dt>
+                        <dd class="form-group__input">
+                            <input type="text" class="form-control form-control--gray" value="" placeholder="あなたの役職を教えてください">
+                        </dd>
+                    </dl>
+                    <div class="profile-user__form-control">
+                        <button class="c-btn__submit c-btn__submit--gray">キャンセル</button>
+                        <button class="c-btn__submit js-alert">編集</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="c-modal c-modal--engineer" id="logout">
+	<div class="c-modal__wp">
+		<form action="" method="post" class="c-modal__form">
+			<h3 class="c-modal__ttl">ログアウト</h3>
+            <div class="c-modal__desc">
+                アカウントをログアウトしますか
+            </div>
+			<div class="c-modal__control">
+                <button class="c-modal__submit c-modal__submit--gray js-cancel">いいえ</button>
+                <a href="/" class="c-modal__submit">はい</button>
+            </div>
+		</form>
+	</div>
+</div>

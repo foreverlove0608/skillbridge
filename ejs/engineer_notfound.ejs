@@ -1,0 +1,37 @@
+<section class="engineer-page">
+	<div class="inner inner--lg">
+		<h1 class="c-ttl__02">エンジニア一覧</h1>
+		<div class="box-filter">
+			<div class="box-filter__keyword">
+				<span class="box-filter__label">キーワードで探す</span>
+				<div class="box-filter__keyword-input">
+					<input type="search" class="form-control" placeholder="キーワード" value="Takahashi">
+				</div>
+			</div>
+            <button class="c-btn__submit">検索</button>
+			<div class="box-filter__exp">
+				<span class="box-filter__label">実務経験</span>
+				<input type="text" class="form-control" placeholder="xx年">
+			</div>
+			<div class="box-filter__skill">
+				<span class="box-filter__label">スキルで探す</span>
+				<select name="" id="" class="form-control form-control--select">
+					<option value="">全て</option>
+					<option value="">HTML</option>
+					<option value="">CSS</option>
+					<option value="">C++</option>
+					<option value="">C#</option>
+				</select>
+			</div>
+			<button class="box-filter__btn sp">
+				<span class="ico"><img src="<%= RELATIVE_PATH %>img/common/ico-filter.png" alt="" width="16"></span>
+				<span class="qty">3</span>
+			</button>
+		</div>
+        <div class="engineer-page__result">検索結果はありません</div>
+		<div class="engineer-page__notfound">
+			<img src="<%= RELATIVE_PATH %>img/common/not-found.png" alt="" width="237" class="pc">
+			<img src="<%= RELATIVE_PATH %>img/common/not-found.png" alt="" width="180" class="sp">
+		</div>
+	</div>
+</section>

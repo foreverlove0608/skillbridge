@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Pill Gothic 300mg Rg';
+    src: url('PillGothic300mg-Bold.eot');
+    src: url('PillGothic300mg-Bold.eot?#iefix') format('embedded-opentype'),
+        url('PillGothic300mg-Bold.woff2') format('woff2'),
+        url('PillGothic300mg-Bold.woff') format('woff'),
+        url('PillGothic300mg-Bold.ttf') format('truetype'),
+        url('PillGothic300mg-Bold.svg#PillGothic300mg-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+

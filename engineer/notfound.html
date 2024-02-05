@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+		<title>Page</title>
+		<meta name="description" content="">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link type="text/css" rel="stylesheet" href="../css/styles.css">
+	</head>
+	<body>
+		<header id="main-header" class="main-header main-header--child">
+			<div class="main-header__inner">
+				<a href="../" class="main-header__logo">
+					<img src="../img/common/logo.png" alt="" width="">
+				</a>
+				<span class="main-header__mobile-icon">
+					<span class="main-header__mobile-icon-border"></span>
+					<span class="main-header__mobile-icon-border"></span>
+					<span class="main-header__mobile-icon-border"></span>
+				</span>
+				<nav class="main-header__navGlobal">
+					<ul class="main-header__menu" role="list">
+						<li class="main-header__menu-item"><a href="../" class="main-header__link">在籍エンジニア</a></li>
+						<li class="main-header__menu-item"><a href="../" class="main-header__link">サービス紹介</a></li>
+						<li class="main-header__menu-item"><a href="../" class="main-header__link">お問い合わせ</a></li>
+						<li class="main-header__menu-item main-header__menu-item--user"><button class="c-btn__01">ログイン</button></li>
+					</ul>
+				</nav>
+				<div class="main-header__user">
+					<button class="c-btn__01 js-login">ログイン</button>
+				</div>
+			</div>
+		</header>
+		<main id="page-engineer_notfound" class="wrapper">
+			<section class="engineer-page">
+				<div class="inner inner--lg">
+					<h1 class="c-ttl__02">エンジニア一覧</h1>
+					<div class="box-filter">
+						<div class="box-filter__keyword">
+							<span class="box-filter__label">キーワードで探す</span>
+							<div class="box-filter__keyword-input">
+								<input type="search" class="form-control" placeholder="キーワード" value="Takahashi">
+							</div>
+						</div>
+						<button class="c-btn__submit">検索</button>
+						<div class="box-filter__exp">
+							<span class="box-filter__label">実務経験</span>
+							<input type="text" class="form-control" placeholder="xx年">
+						</div>
+						<div class="box-filter__skill">
+							<span class="box-filter__label">スキルで探す</span>
+							<select name="" id="" class="form-control form-control--select">
+								<option value="">全て</option>
+								<option value="">HTML</option>
+								<option value="">CSS</option>
+								<option value="">C++</option>
+								<option value="">C#</option>
+							</select>
+						</div>
+						<button class="box-filter__btn sp">
+							<span class="ico"><img src="../img/common/ico-filter.png" alt="" width="16"></span>
+							<span class="qty">3</span>
+						</button>
+					</div>
+					<div class="engineer-page__result">検索結果はありません</div>
+					<div class="engineer-page__notfound">
+						<img src="../img/common/not-found.png" alt="" width="237" class="pc">
+						<img src="../img/common/not-found.png" alt="" width="180" class="sp">
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer id="main-footer" class="main-footer">
+			<div class="inner">
+				<a href="#" class="main-footer__logo">
+					<img src="../img/common/logo-ft.png" alt="SKILL BRIDGE">
+				</a>
+				<nav class="main-footer__nav">
+					<ul class="main-footer__menu" role="list">
+						<li class="main-footer__menu-item"><a href="../">会社概要</a></li>
+						<li class="main-footer__menu-item"><a href="../">プライバシーポリシー</a></li>
+						<li class="main-footer__menu-item"><a href="../">利用規約</a></li>
+						<li class="main-footer__menu-item"><a href="../">お問い合わせ</a></li>
+					</ul>
+				</nav>
+			</div>
+			<small class="main-footer__copyright">Copyright &copy; 2024 SKILL BRIDGE</small>
+		</footer>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="../js/vendors/jquery.matchHeight-min.js"></script>
+		<script src="../js/vendors/ofi.min.js"></script>
+		<script src="../js/setting.js"></script>
+	</body>
+</html>

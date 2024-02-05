@@ -1,0 +1,95 @@
+@use 'vars' as *;
+
+.main-footer{
+	background: $color-main;
+	padding: 80px 0 0;
+	&--register{
+		display: none;
+	}
+	@include mq{
+		padding: 60px 0 0;
+	}
+	&__logo{
+		max-width: 405px;
+		width: 100%;
+		margin: 0 auto 33px;
+		display: block;
+		@include mq(tb){
+			max-width: 300px;
+		}
+		@include mq{
+			max-width: 225px;
+			margin-bottom: 44px;
+		}
+	}
+	&__nav{
+		margin-bottom: 85px;
+		@include mq{
+			margin-bottom: 48px;
+		}
+	}
+	&__menu{
+		@include flex(center, center);
+		@include mq(sm){
+			display: block;
+			text-align: center;
+		}
+		&-item{
+			@include font-size(24);
+			font-weight: 700;
+			color: #fff;
+			padding: 0 3.125vw;
+			position: relative;
+			@include mq(tb){
+				@include font-size(20);
+			}
+			@include mq{
+				@include font-size(16);
+				letter-spacing: 3px;
+				padding: 0 15px;
+			}
+			@include mq(sm){
+				padding: 0;
+				display: block;
+				margin-bottom: 36px; 
+			}
+			&:first-child{
+				padding-left: 0;
+			}
+			&:last-of-type{
+				padding-right: 0;
+				margin-bottom: 0;
+				&:after{
+					display: none;
+				}
+			}
+			&::after{
+				content: "/";
+				display: block;
+				position: absolute;
+				top: 0;
+				right: 0;
+				@include mq(sm){
+					display: none;
+				}
+			}
+			a{
+				color: #fff;
+			}
+		}
+	}
+	&__copyright{
+		background: #463B39;
+		padding: 23px 0;
+		@include font-size(14);
+		font-weight: 600;
+		color: #fff;
+		text-align: center;
+		display: block;
+		letter-spacing: 3px;
+		@include mq(sm){
+			letter-spacing: 2.5px;
+			padding: 25px 0;
+		}
+	}
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+		<title>Page</title>
+		<meta name="description" content="">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="shortcut icon" href="./favicon.ico">
+		<link type="text/css" rel="stylesheet" href="./css/styles.css">
+	</head>
+	<body>
+		<header id="main-header" class="main-header main-header--child">
+			<div class="main-header__inner">
+				<a href="./" class="main-header__logo">
+					<img src="./img/common/logo.png" alt="" width="">
+				</a>
+				<span class="main-header__mobile-icon">
+					<span class="main-header__mobile-icon-border"></span>
+					<span class="main-header__mobile-icon-border"></span>
+					<span class="main-header__mobile-icon-border"></span>
+				</span>
+				<nav class="main-header__navGlobal">
+					<ul class="main-header__menu" role="list">
+						<li class="main-header__menu-item"><a href="./" class="main-header__link">在籍エンジニア</a></li>
+						<li class="main-header__menu-item"><a href="./" class="main-header__link">サービス紹介</a></li>
+						<li class="main-header__menu-item"><a href="./" class="main-header__link">お問い合わせ</a></li>
+						<li class="main-header__menu-item main-header__menu-item--user"><button class="c-btn__01">ログイン</button></li>
+					</ul>
+				</nav>
+				<div class="main-header__user">
+					<button class="c-btn__01 js-login">ログイン</button>
+				</div>
+			</div>
+		</header>
+		<main id="page-register" class="wrapper">
+			<section class="register-page">
+				<div class="inner">
+					<form method="post" action="#" class="register-page__wp">
+						<h2 class="register-page__ttl">メールアドレス</h2>
+						<dl class="form-group">
+							<dt class="form-group__label">メールアドレス</dt>
+							<dd class="form-group__input">
+								<input type="text" class="form-control has-value" value="kazukimimori@skillbridge.com">
+							</dd>
+						</dl>
+						<dl class="form-group">
+							<dt class="form-group__label"><span>*</span>パスワード</dt>
+							<dd class="form-group__input">
+								<input type="password" class="form-control" placeholder="パスワードを入力してください">
+							</dd>
+						</dl>
+						<dl class="form-group">
+							<dt class="form-group__label"><span>*</span>パスワード（確認）</dt>
+							<dd class="form-group__input">
+								<input type="password" class="form-control" placeholder="パスワードを入力してください">
+							</dd>
+						</dl>
+						<button class="c-btn__submit">登録</button>
+					</form>
+				</div>
+			</section>
+		</main>
+		<footer id="main-footer" class="main-footer main-footer--register">
+			<div class="inner">
+				<a href="#" class="main-footer__logo">
+					<img src="./img/common/logo-ft.png" alt="SKILL BRIDGE">
+				</a>
+				<nav class="main-footer__nav">
+					<ul class="main-footer__menu" role="list">
+						<li class="main-footer__menu-item"><a href="./">会社概要</a></li>
+						<li class="main-footer__menu-item"><a href="./">プライバシーポリシー</a></li>
+						<li class="main-footer__menu-item"><a href="./">利用規約</a></li>
+						<li class="main-footer__menu-item"><a href="./">お問い合わせ</a></li>
+					</ul>
+				</nav>
+			</div>
+			<small class="main-footer__copyright">Copyright &copy; 2024 SKILL BRIDGE</small>
+		</footer>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="./js/vendors/jquery.matchHeight-min.js"></script>
+		<script src="./js/vendors/ofi.min.js"></script>
+		<script src="./js/setting.js"></script>
+	</body>
+</html>

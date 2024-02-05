@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+		<title>Page</title>
+		<meta name="description" content="">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link type="text/css" rel="stylesheet" href="../css/styles.css">
+	</head>
+	<body>
+		<header id="main-header" class="main-header main-header--child">
+			<div class="main-header__inner">
+				<a href="../" class="main-header__logo">
+					<img src="../img/common/logo.png" alt="" width="">
+				</a>
+				<span class="main-header__mobile-icon">
+					<span class="main-header__mobile-icon-border"></span>
+					<span class="main-header__mobile-icon-border"></span>
+					<span class="main-header__mobile-icon-border"></span>
+				</span>
+				<nav class="main-header__navGlobal">
+					<ul class="main-header__menu" role="list">
+						<li class="main-header__menu-item"><a href="../" class="main-header__link">在籍エンジニア</a></li>
+						<li class="main-header__menu-item"><a href="../" class="main-header__link">サービス紹介</a></li>
+						<li class="main-header__menu-item"><a href="../" class="main-header__link">お問い合わせ</a></li>
+						<li class="main-header__menu-item main-header__menu-item--user"><button class="c-btn__01">ログイン</button></li>
+					</ul>
+				</nav>
+				<div class="main-header__user">
+					<a href="/profile/" class="main-header__user-info">
+						<span class="main-header__user-name">三森 一輝</span>
+						<span class="main-header__user-avatar">
+							<img src="../img/common/img-user.png" alt="三森 一輝" width="54">
+						</span>
+					</a>
+				</div>
+			</div>
+		</header>
+		<main id="page-profile_changepass" class="wrapper">
+			<section class="profile-user">
+				<div class="inner inner--lg">
+					<div class="alert-success">
+						<span>登録が完了しました。</span>
+						<a href="#" class="alert-success__close js-close-alert"></a>
+					</div>
+					<h1 class="c-ttl__02">ユーザー情報</h1>
+					<div class="profile-user__wp">
+						<div class="profile-user__left">
+							<div class="profile-user__img">
+								<div class="profile-user__img-thumb">
+									<img src="../img/profile/img-user.png" alt="" width="">
+								</div>
+								<span class="profile-user__img-ico">
+									<img src="../img/profile/ico-upload.png" alt="" width="">
+								</span>
+							</div>
+							<h2 class="profile-user__name">三森 一輝</h2>
+							<ul class="profile-user__control">
+								<li class="profile-user__control-item"><a href="/profile/">プロフィール</a></li>
+								<li class="profile-user__control-item is-active"><a href="/profile/changepass.html">パスワード変更</a></li>
+								<li class="profile-user__control-item"><a href="/logout.html">ログアウト</a></li>
+							</ul>
+						</div>
+						<div class="profile-user__right">
+							<form action="#" method="post" class="profile-user__form profile-user__form--changepass">
+								<h3 class="profile-user__form-ttl">プロフィール</h3>
+								<dl class="form-group">
+									<dt class="form-group__label"><span>*</span>現在のパスワード</dt>
+									<dd class="form-group__input">
+										<input type="password" class="form-control form-control--gray" value="" placeholder="現在のパスワード">
+									</dd>
+								</dl>
+								<dl class="form-group">
+									<dt class="form-group__label"><span>*</span>新しいパスワード</dt>
+									<dd class="form-group__input">
+										<input type="password" class="form-control form-control--gray" value="" placeholder="新しいパスワード">
+									</dd>
+								</dl>
+								<dl class="form-group">
+									<dt class="form-group__label"><span>*</span>新しいパスワード（確認）</dt>
+									<dd class="form-group__input">
+										<input type="password" class="form-control form-control--gray" value="" placeholder="新しいパスワード（確認）">
+									</dd>
+								</dl>
+								<div class="profile-user__form-control">
+									<button class="c-btn__submit c-btn__submit--gray">キャンセル</button>
+									<button class="c-btn__submit js-changepass">編集</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="c-modal c-modal--engineer" id="changepass-success">
+				<div class="c-modal__wp">
+					<form action="" method="post" class="c-modal__form">
+						<div class="c-modal__ico">
+							<img src="../img/common/check-circle.png" alt="">
+						</div>
+						<div class="c-modal__desc c-modal__desc--lg"> パスワードを変更しました。 </div>
+						<div class="c-modal__control">
+							<button class="c-modal__submit">ログイン</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</main>
+		<footer id="main-footer" class="main-footer">
+			<div class="inner">
+				<a href="#" class="main-footer__logo">
+					<img src="../img/common/logo-ft.png" alt="SKILL BRIDGE">
+				</a>
+				<nav class="main-footer__nav">
+					<ul class="main-footer__menu" role="list">
+						<li class="main-footer__menu-item"><a href="../">会社概要</a></li>
+						<li class="main-footer__menu-item"><a href="../">プライバシーポリシー</a></li>
+						<li class="main-footer__menu-item"><a href="../">利用規約</a></li>
+						<li class="main-footer__menu-item"><a href="../">お問い合わせ</a></li>
+					</ul>
+				</nav>
+			</div>
+			<small class="main-footer__copyright">Copyright &copy; 2024 SKILL BRIDGE</small>
+		</footer>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="../js/vendors/jquery.matchHeight-min.js"></script>
+		<script src="../js/vendors/ofi.min.js"></script>
+		<script src="../js/setting.js"></script>
+	</body>
+</html>
