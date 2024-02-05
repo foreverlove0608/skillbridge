@@ -4846,7 +4846,6 @@ Header
   border-radius: 12px;
   -webkit-box-shadow: 2px 2px 10px 0px #7E91D324;
           box-shadow: 2px 2px 10px 0px #7E91D324;
-  display: none;
 }
 .alert-success span {
   position: relative;
