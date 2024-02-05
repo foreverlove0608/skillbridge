@@ -147,6 +147,37 @@ $(".js-alert").click(function (e) {
 	$('.alert-success').fadeIn(300);
 });
 
+$('.js-login').click(function (e) {
+	e.preventDefault();
+	$('.c-modal').removeClass('is-show');
+	$('#login').addClass('is-show');
+});
+
+
+$('.js-notyfi-login').click(function (e) {
+	e.preventDefault();
+	$('.c-modal').removeClass('is-show');
+	$('#notyfication-login').addClass('is-show');
+});
+
+$('.js-login-success').click(function (e) {
+	e.preventDefault();
+	$('.c-modal').removeClass('is-show');
+	$('#login-success').addClass('is-show');
+});
+
+$('.js-forgetpass').click(function (e) {
+	e.preventDefault();
+	$('.c-modal').removeClass('is-show');
+	$('#forget-pass').addClass('is-show');
+});
+
+$('.js-register').click(function (e) {
+	e.preventDefault();
+	$('.c-modal').removeClass('is-show');
+	$('#register').addClass('is-show');
+});
+
 $('.js-logout').click(function (e) {
 	e.preventDefault();
 	$('#logout').addClass('is-show');
@@ -165,6 +196,16 @@ $('.js-fillter').click(function (e) {
 $('.js-cancel').click(function (e) {
 	e.preventDefault();
 	$(this).closest('.c-modal').removeClass('is-show');
+});
+
+$('.c-modal__btn-close').click(function (e) {
+	e.preventDefault();
+	$('.c-modal').removeClass('is-show');
+});
+
+$('.js-close-modal').click(function (e) {
+	e.preventDefault();
+	$('.c-modal').removeClass('is-show');
 });
 
 $('.js-tooltip').on( "mouseenter", function() {
