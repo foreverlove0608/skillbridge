@@ -1,11 +1,36 @@
 @use 'vars' as *;
 #page-register_form{
 	background: #F6F8FC;
+	.txt-link{
+		@include font-size(16);
+		font-weight: 400;
+		color: #0072F8;
+		position: absolute;
+		top: 24px;
+		right: 30px;
+		@include mq{
+			@include font-size(14);
+			top: 12px;
+		}
+	}
 }
 .register-form{
-	padding: 32px 0;
+	padding: 32px 0 117px;
+	@include mq{
+		padding: 24px 0 30px;
+	}
 	.inner{
 		max-width: 1130px;
+	}
+	&__list-skills{
+		@include font-size(16);
+		line-height: 1.4;
+		p{
+			margin-bottom: 20px;
+			&:last-of-type{
+				margin-bottom: 0;
+			}
+		}
 	}
 	&__wp{
 		background: #fff;
@@ -15,9 +40,13 @@
 		overflow: hidden;
 		position: relative;
 		padding: 24px 30px;
+		@include mq{
+			padding: 15px 20px;
+		}
 		@include p-before(100%, calc(100% - 6px)){
 			background: #fff;
 			top: 6px;
+			border-radius: 16px;
 			left: 0;
 		}
 	}
@@ -26,6 +55,9 @@
 		z-index: 2;
 		text-align: center;
 		margin-bottom: 40px;
+		@include mq{
+			margin-bottom: 20px;
+		}
 		span{
 			width: 100%;
 			display: block;
@@ -62,6 +94,9 @@
 		position: relative;
 		padding-left: 20px;
 		margin-bottom: 15px;
+		@include mq{
+			@include font-size(16);
+		}
 		@include p-before(4px, 4px){
 			background: $color-main;
 			border-radius: 50%;
@@ -80,6 +115,11 @@
 		.form-group{
 			padding: 20px 15px 0;
 			width: 50%;
+			@include mq{
+				margin-bottom: 24px;
+				padding: 10px;
+				width: 100%;
+			}
 			input{
 				&::placeholder{
 					color: #94A3B8;
@@ -112,6 +152,9 @@
 						label{
 							margin-right: 80px;
 							position: relative;
+							@include mq{
+								margin-right: 35px;
+							}
 							&:last-of-type{
 								margin-right: 0;
 							}
@@ -159,6 +202,9 @@
 						span{
 							@include font-size(12);
 							margin-bottom: 10px;
+							@include mq{
+								@include font-size(10);
+							}
 						}
 						small{
 							@include font-size(8);
@@ -173,12 +219,22 @@
 		}
 		&--jobs{
 			padding: 0 15px;
+			.register-form__dd-wp{
+				padding-bottom: 25px;
+				margin-bottom: 25px;
+				.form-group{
+					@include mq{
+						padding: 10px 0;
+					}
+				}
+			}
 		}
 		&-wp{
 			background: #F6F8FC;
 			border: 1px dashed #E2E8F0;
 			border-radius: 16px;
 			padding: 16px 15px;
+			position: relative;
 		}
 	}
 }
@@ -224,12 +280,50 @@
 }
 
 .btn-add-project{
+	@include font-size(16);
+	font-weight: 700;
+	color: #2F80ED;
+	position: relative;
+	padding-left: 30px;
+	margin-top: 24px;
+	margin-left: 24px;
+	@include mq{
+		@include font-size(14);
+	}
+	@include p-before(24px, 24px){
+		background: url(../img/common/plus.png) no-repeat center/100%;
+		top: calc(50% - 12px);
+		left: 0;
+	}
+}
 
+.btn-submit-project{
+	@include font-size(16);
+	color: #2F80ED;
+	position: relative;
+	@include flex(0, center);
+	background: #0072F81A;
+	outline: 0;
+	border: none;
+	cursor: pointer;
+	padding: 8px 21px;
+	border-radius: 12px;
+	@include mq{
+		padding: 8px 15px;
+	}
+	@include p-before(24px, 24px){
+		background: url(../img/common/plus.png) no-repeat center/100%;
+		position: static;
+		margin-right: 10px;
+	}
 }
 
 .acc-skills{
 	padding: 0 15px;
 	margin-bottom: 12px;
+	@include mq{
+		padding: 0;
+	}
 	&:last-of-type{
 		margin-bottom: 0;
 	}
@@ -239,12 +333,6 @@
 		margin-bottom: 14px;
 		position: relative;
 		cursor: pointer;
-		@include p-before(24px, 24px){
-			background: url(../img/common/minus-square.png) no-repeat center/100%;
-			top: 50%;
-			transform: translateY(-50%);
-			left: 0;
-		}
 		@include p-before(24px, 24px){
 			background: url(../img/common/ico-plus.png) no-repeat center/100%;
 			top: 50%;
@@ -264,10 +352,18 @@
 		border: 1px dashed #E2E8F0;
 		border-radius: 16px;
 		display: none;
+		@include mq{
+			padding: 15px 15px;
+			border-radius: 8px;
+		}
 		&-left{
 			@include font-size(16);
 			font-weight: 600;
 			width: 240px;
+			@include mq(sm){
+				width: 100%;
+				margin-bottom: 15px;
+			}
 		}
 		&-checker{
 			.txt-checkbox{
@@ -303,8 +399,363 @@
 			width: calc(100% - 240px);
 			@include flex();
 			gap: 0 8px;
+			@include mq(sm){
+				width: 100%;
+			}
 			input{
 				width: 100px;
+			}
+		}
+	}
+	&.is-active{
+		.acc-skills__dt{
+			&::before{
+				background: url(../img/common/minus-square.png) no-repeat center/100%;
+			}
+		}
+	}
+}
+
+.box-project{
+	background: #fff;
+	border-radius: 16px;
+	border: 1px dashed #ccc;
+	padding: 16px 30px;
+	width: calc(100% - 30px);
+	margin: 0 auto;
+	position: relative;
+	@include mq{
+		border-radius: 8px;
+		padding: 15px 15px;
+		width: 100%;
+	}
+	&__close{
+		position: absolute;
+		top: -12px;
+		right: 7px;
+	}
+	.form-group{
+		@include mq{
+			margin-bottom: 14px;
+			margin-left: 0;
+			margin-right: 0;
+			padding: 10px 15px !important;
+		}
+	}
+}
+
+.box-qualifications{
+	.form-grid{
+		position: relative;
+		.form-group{
+			width: calc(100% - 300px);
+			padding-right: 30px;
+			@include mq{
+				width: 100%;
+				padding-right: 0;
+			}
+			&:nth-child(2){
+				width: 300px;
+				@include mq{
+					width: 100%;
+				}
+			}
+			&__input{
+				.txt-link{
+					top: -10px !important;
+					background: #fff;
+					padding: 0 5px;
+					text-align: center;
+					right: 20px;
+				}
+			}
+		}
+		&--styles02{
+			.form-group{
+				&:nth-child(2){
+					padding-right: 75px;
+				}
+			}
+			.box-project__close{
+				position: absolute;
+				top: 30px;
+				right: 35px;
+				@include mq{
+					right: 20px;
+					bottom: 48px;
+				}
+			}
+		}
+	}
+}
+
+.project-business{
+	&__ttl{
+		position: relative;
+		@include p-after(100%, 1px){
+			background: #E2E8F0;
+			top: 50%;
+			left: 0;
+		}
+		span{
+			@include font-size(16);
+			font-weight: 800;
+			color: #F5601B;
+			padding-right: 20px;
+			background: #fff;
+			position: relative;
+			z-index: 2;
+		}
+	}
+	.form-group{
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+
+#qualifications{
+	.c-modal__wp{
+		padding: 0;
+	}
+}
+
+.qualifications-content{
+	padding: 11px 20px;
+	&__wp{
+		border: 1px solid #E2E8F0;
+		padding: 8px;
+		border-radius: 12px;
+	}
+	label{
+		cursor: pointer;
+		margin-bottom: 4px;
+		display: block;
+		&:last-of-type{
+			margin-bottom: 0;
+		}
+		.txt-checkbox{
+			padding: 6px 8px;
+			border-radius: 8px;
+			display: inline-block;
+			@include font-size(16);
+			width: 98%;
+		}
+		input:checked + .txt-checkbox{
+			background: #F1F4F9;
+			font-weight: 700;
+			color: #F5601B;
+		}
+	}
+}
+
+
+
+
+.ui-widget.ui-widget-content{
+	width: 210px;
+	border: none;
+	padding: 0;
+	border-radius: 5px;
+}
+
+.ui-datepicker .ui-datepicker-header{
+	background: #FD9B44;
+	color: #fff;
+	@include font-size(12);
+	span{
+		@include font-size(15);
+	}
+
+}
+
+.ui-datepicker{
+	.ui-datepicker-prev, .ui-datepicker-next{
+		top: 2px;
+		@include flex(center, center);
+		@include smooth-transition;
+		&:hover{
+			background: transparent;
+			opacity: .7;
+			@include smooth-transition;
+			border: none;
+		}
+		span{
+			position: static;
+			margin: 0 auto;
+			top: 0;
+			left: 0;
+		}
+	}
+	.ui-datepicker-prev{
+		opacity: 1;
+		span{
+			display: block;
+			width: 8px;
+			height: 13px;
+			font-size: 0;
+			background: url(../img/common/arr-left-wt.png) no-repeat center/100%;
+		}
+	}
+	.ui-datepicker-next{
+		span{
+			position: relative;
+			transform: rotate(180deg);
+			display: block;
+			width: 8px;
+			height: 13px;
+			font-size: 0;
+			background: url(../img/common/arr-left-wt.png) no-repeat center/100%;
+		}
+	}
+
+	.ui-datepicker-title{
+		position: relative;
+		top: 2px;
+	}
+}
+
+
+.ui-datepicker-calendar{
+	border-collapse: none !important;
+	tr{
+		th{
+			background: #F5F0E9;
+			@include font-size(12);
+			font-weight: 700;
+			border-right: 1px solid #E8E3DB;
+			border-bottom: 1px solid #E8E3DB;
+			&:last-of-type{
+				border-right: none;
+			}
+		}
+		td{
+			padding: 0;
+			@include font-size(12);
+			font-family: 'Arial', sans-serif;
+			text-align: center;
+			span, a{
+				text-align: center;
+				padding: .5em;
+				background: #fff !important;
+				border-color: #E8E3DB;
+			}
+		}
+	}
+}
+
+.ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled{
+	opacity: 1;
+}
+
+.ui-state-default{
+	background-color: #fff;
+}
+.ui-datepicker{
+	table{
+		margin-bottom: 0;
+		background: #E8E3DB;
+	}
+}
+.ui-datepicker td a {
+	padding: 0.6em 0.2em;
+	text-align: center;
+}
+.ui-priority-secondary{
+	background: #F2F2F2 !important;
+	color: #aaa !important;
+}
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight{
+	border: 1px solid transparent !important;
+	background: $color-main !important;
+	color: #fff !important;
+}
+
+.ui-datepicker-week-end{
+	color: $color-main;
+	background: #FFE8D3 !important;
+	&:last-of-type{
+		span{
+			color: $color-main !important;
+		}
+	}
+}
+
+.ui-datepicker-other-month{
+	background: #fff !important;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active{
+	color: #000;
+	background: #fff;
+	border-color: $color-main !important;
+}
+
+
+#register-skill{
+	padding-bottom: 16px;
+	.c-modal{
+		&__wp{
+			padding: 0;
+			max-width: 850px;
+		}
+	}
+	.c-modal__fillter{
+		display: block !important;
+		&-ttl{
+			padding: 17px 20px;
+			@include fts(16, 22.4);
+			font-weight: 600;
+			border-bottom: 1px solid #E2E8F0;
+		}
+		&-close{
+			position: absolute;
+			top: 16px;
+			right: 20px;
+			z-index: 2;
+			border: none;
+			outline: 0;
+			background: none;
+			cursor: pointer;
+		}
+		&-flex{
+			padding: 12px 21px;
+			@include flex(0, 0, wrap);
+			.col-type{
+				width: 280px;
+				border-radius: 12px 0 0 12px;
+				border: 1px solid #E2E8F0;
+				border-right: none;
+				overflow: hidden;
+				&__wp{
+					padding: 8px;
+				}
+			}
+			.col-hint{
+				width: calc(100% - 280px);
+				border-radius: 0 12px 12px 0;
+				border: 1px solid #E2E8F0;
+				overflow: hidden;
+				&__wp{
+					max-width: 435px;
+					overflow-y: auto;
+				}
+			}
+			.c-ttl__04{
+				padding: 10px 14px;
+				background: #F1F4F9;
+			}
+		}
+	}
+	.c-modal__filltersp{
+		&::before, &:after{
+			display: none !important;
+		}
+	}
+	.c-modal{
+		&__control{
+			.c-modal__submit{
+				margin-top: 28px;
 			}
 		}
 	}

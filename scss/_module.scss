@@ -192,12 +192,13 @@ Layout
 	margin-bottom: 0 !important;
 }
 
+.mt0{
+	margin-top: 0 !important;
+}
 
-.txt-link{
-	@include font-size(16);
-	font-weight: 400;
-	color: #0072F8;
-	position: absolute;
-	top: 24px;
-	right: 30px;
+
+.pd0-sp{
+	@include mq{
+		padding: 20px 0 0 !important;
+	}
 }

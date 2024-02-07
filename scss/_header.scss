@@ -19,6 +19,11 @@ Header
 	&--child{
 		background: #fff;
 	}
+	&--register{
+		.main-header__inner{
+			justify-content: space-between;
+		}
+	}
 	&__inner{
 		@include flex(start, center ,wrap);
 		margin: 0 auto;
@@ -62,6 +67,119 @@ Header
 			text-align: center;
 			background: rgba(#fff, .96);
 			height: 100vh;
+		}
+
+		&--register-form{
+			width: calc(100% - 270px);
+			@include mq(xl){
+				width: calc(100% - 180px);
+			}
+			@include mq(tb){
+				width: 100%;
+			}
+			.main-header__menu{
+				justify-content: flex-end;
+			}
+			.main-header__menu-item{
+				@include font-size(16);
+				letter-spacing: 0;
+				padding: 0;
+				margin-right: 24px;
+				@include mq(xl){
+					@include font-size(14);
+					margin-right: 10px;
+				}
+				&::before, &::after{
+					display: none !important;
+				}
+			}
+			.main-header__link{
+				padding: 13px 20px;
+				background: #FFF2D4;
+				border-radius: 8px;
+				display: inline-flex;
+				align-items: center;
+				@include mq(xl){
+					padding: 10px 13px;
+				}
+				img{
+					margin-right: 8px;
+				}
+			}
+			.main-header__menu-control{
+				.button{
+					position: relative;
+					top: 50%;
+					width: 240px;
+					height: 48px;
+					overflow: hidden;
+					background: #F1F4F9;
+					border-radius: 30px;
+					@include mq(tb){
+						margin: 0 auto;
+					}
+				}
+				.checkbox{
+					position: relative;
+					width: 100%;
+					height: 100%;
+					padding: 0;
+					margin: 0;
+					opacity: 0;
+					cursor: pointer;
+					z-index: 3;
+					&:checked + .knobs{
+						&::before{
+							color: #F5601B;
+							background: #fff;
+						}
+						&:after{
+							color: #64748B;
+							background: none;
+						}
+					}
+				}
+				.knobs{
+					position: absolute;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					z-index: 2;
+					&::before{
+						content: "Vietnamese";
+						position: absolute;
+						top: 4px;
+						left: 4px;
+						width: 50%;
+						height: 40px;
+						@include font-size(16);
+						color: #64748B;
+						font-weight: bold;
+						text-align: center;
+						line-height: 1;
+						border-radius: 20px;
+						@include flex(center, center);
+					}
+					&::after{
+						content: "Japanese";
+						position: absolute;
+						top: 4px;
+						left: auto;
+						right: 4px;
+						width: 50%;
+						height: 40px;
+						@include font-size(16);
+						color: #F5601B;
+						font-weight: bold;
+						text-align: center;
+						line-height: 1;
+						background-color: #fff;
+						border-radius: 20px;
+						@include flex(center, center);
+					}
+				}
+			}
 		}
 	}
 	&__menu{

@@ -959,6 +959,26 @@
 	&.current{
 		display: inherit;
 	}
+	&--selected{
+		@include font-size(14);
+		line-height: 1.4;
+		label{
+			margin-bottom: 20px;
+			cursor: pointer;
+			display: block;
+			@include smooth-transition;
+			&:hover{
+				color: #F5601B;
+				font-weight: 600;
+			}
+			&:last-of-type{
+				margin-bottom: 0;
+			}
+			input:checked + .txt-checkbox{
+				color: #F5601B;
+			}
+		}
+	}
 }
 .list-skills{
 	@include flex(0, 0, wrap);

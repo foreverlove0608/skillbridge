@@ -193,6 +193,17 @@ $('.js-fillter').click(function (e) {
 	$('#fillter').addClass('is-show');
 });
 
+$('.js-skills-register').click(function (e) {
+	e.preventDefault();
+	$('#register-skill').addClass('is-show');
+});
+
+$('.js-qualifications').click(function (e) {
+	e.preventDefault();
+	var id = $(this).attr('data-id');
+	$('#qualifications').addClass('is-show');
+});
+
 $('.js-cancel').click(function (e) {
 	e.preventDefault();
 	$(this).closest('.c-modal').removeClass('is-show');
@@ -234,7 +245,7 @@ $('.tabs-content input').each(function () {
 
 		//add item select while input check is checked
 		if($(this).prop('checked')){
-			$('.box-selected__result').append( "<li class="+val_checkbox+"><span class='txt-val'>"+val_checkbox+"</span><span class='btn-detete-selected'></span></li>" );
+			$('.box-selected__result').append("<li class=" + val_checkbox + "><span class='txt-val'>" + val_checkbox + "</span><span class='btn-detete-selected'></span></li>");
 		}else{
 			$('.box-selected__result li').each(function () {
 				let txt_val = $(this).find('.txt-val').text();
@@ -278,6 +289,11 @@ $('.tabs-content input').each(function () {
 //update skills selected on input
 $('.js-submit-skills').click(function (e) {
 	e.preventDefault();
+	$('.tabs-content input').each(function () {
+		if ($(this).prop('checked')) {
+			$('#register-form__list-skills').val($(this).val());
+		}
+	})
 	$('.c-modal').removeClass('is-show');
 })
 
@@ -311,3 +327,86 @@ $('.fillter-acc__label').click(function () {
 	$(this).next().slideToggle();
 	$(this).parent().addClass('is-active');
 })
+
+
+$('.acc-skills__dt').click(function () {
+	$(this).next().slideToggle();
+	$(this).parent().toggleClass('is-active');
+})
+
+
+var skill_template = `<div class="form-grid form-grid--styles02">
+											<dl class="form-group">
+												<dt class="form-group__label">資格証明書</dt>
+												<dd class="form-group__input">
+													<a href="" class="txt-link js-qualifications">参考</a>
+													<input type="text" class="form-control" placeholder="基本情報技術者">
+												</dd>
+											</dl>
+											<dl class="form-group">
+												<dt class="form-group__label">取得日</dt>
+												<dd class="form-group__input">
+													<input type="text" placeholder="2021年06月" class="form-control form-control--date">
+												</dd>
+											</dl>
+											<a href="" class="box-project__close"><img src="../img/common/close-circle-red.png" alt="" width="24"></a>
+										</div>`;
+
+$('.box-project__close').click(function (e) {
+	e.preventDefault();
+	$(this).parent().remove();
+})
+
+$('.js-add-qualifications').click(function () {
+	// $(this).parent().append(skill_template);
+	
+	$(this).before( skill_template );
+	$('.box-project__close').click(function (e) {
+		e.preventDefault();
+		$(this).parent().remove();
+	})
+	$('.js-qualifications').click(function (e) {
+		e.preventDefault();
+		$('#qualifications').addClass('is-show');
+	});
+})
+
+
+$('.js-submit-qualifications').click(function (e) {
+	e.preventDefault();
+	$('.qualifications-content__wp input').each(function () {
+		if ($(this).prop('checked')) {
+			$('#' + id).val($(this).val());
+			// _this.val($(this).val());
+		}
+	})
+	$('.c-modal').removeClass('is-show');
+})
+
+// $('.js-submit-skills').click(function (e) {
+// 	e.preventDefault();
+// 	$('.tabs-content input').each(function () {
+// 		if ($(this).prop('checked')) {
+// 			$('#register-form__list-skills').val($(this).val());
+// 		}
+// 	})
+// 	$('.c-modal').removeClass('is-show');
+// })
+
+
+jQuery(function() {
+	jQuery('#datepicker01').datepicker({
+		dateFormat: 'yy年mm月dd日',
+		minDate: 0,
+		firstDay: 1,
+		showOtherMonths: true,
+      selectOtherMonths: true
+	});
+	jQuery('#datepicker02').datepicker({
+		dateFormat: 'yy年mm月dd日',
+		minDate: 0,
+		firstDay: 1,
+		showOtherMonths: true,
+      selectOtherMonths: true
+	});
+});
