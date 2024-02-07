@@ -242,6 +242,13 @@ $('.tabs-content input').each(function () {
 					$('.' + val_checkbox).hide();
 				}
 			})
+
+			// $('.box-filter__label .form-control li').each(function () {
+			// 	let txt_val = $(this).find('.txt-val').text();
+			// 	if(val_checkbox == txt_val){
+			// 		$('.' + val_checkbox).hide();
+			// 	}
+			// })
 		}
 
 
@@ -250,8 +257,10 @@ $('.tabs-content input').each(function () {
 
 
 		//delete only item white click 
-		$('.btn-detete-selected').click(function () {			
-			$(this).parent().hide();
+		$('.btn-detete-selected').click(function () {
+			var _this = $(this).parent().attr('class');
+			console.log($("." + _this).html());
+			$("." + _this).hide();
 			let data_checkbox = $(this).prev().text();
 			// console.log(data_checkbox);
 			$('.tabs-content input').each(function () {
@@ -265,11 +274,25 @@ $('.tabs-content input').each(function () {
 	})
 });
 
+
+//update skills selected on input
+$('.js-submit-skills').click(function (e) {
+	e.preventDefault();
+	$('.c-modal').removeClass('is-show');
+})
+
+
 $('.txt-delete-all').click(function (e) {
 	e.preventDefault();
 	$('.box-selected__result li').hide();
 	$('.box-selected__heading .qty').html('(0)');
 	$('.tabs-content input').prop('checked', false);
+})
+
+
+$('.btn-delete-skills-after').click(function () {
+	$('#fillter').hide();
+	$(this).parent().hide();
 })
 
 function updateTotal() {
@@ -283,3 +306,8 @@ function updateTotal() {
 
 	$('.box-selected__heading .qty').html('('+count+')');
 }
+
+$('.fillter-acc__label').click(function () {
+	$(this).next().slideToggle();
+	$(this).parent().addClass('is-active');
+})

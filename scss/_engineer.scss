@@ -177,6 +177,11 @@
 	}
 	&__skill{
 		width: 29.69%;
+		position: relative;
+		.form-control{
+			cursor: pointer;
+			@include fn-hover;
+		}
 		@include mq{
 			display: none;
 		}
@@ -275,4 +280,26 @@
 
 .c-flex{
 	@include flex(0, 0, wrap);
+}
+
+.skills-after-submit{
+	background: #F1F4F9;
+	border-radius: 30px;
+	padding: 8px 12px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: flex-start;
+	@include font-size(12);
+}
+
+.btn-delete-skills-after{
+	display: block;
+	width: 16px;
+	height: 16px;
+	background: url(../img/common/btn-delete-skills.png) no-repeat center/100%;
+	margin-left: 10px;
+	position: relative;
+	z-index: 2;
+	cursor: pointer;
+	@include fn-hover;
 }

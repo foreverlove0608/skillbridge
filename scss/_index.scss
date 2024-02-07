@@ -762,6 +762,9 @@
 	&__fillter{
 		padding-bottom: 16px;
 		position: relative;
+		@include mq{
+			display: none;
+		}
 		&-ttl{
 			padding: 17px 20px;
 			@include fts(16, 22.4);
@@ -796,6 +799,10 @@
 				border-radius: 0 12px 12px 0;
 				border: 1px solid #E2E8F0;
 				overflow: hidden;
+				&__wp{
+					max-width: 435px;
+					overflow-y: auto;
+				}
 			}
 			.c-ttl__04{
 				padding: 10px 14px;
@@ -810,8 +817,115 @@
 			}
 		}
 	}
+	&__filltersp{
+		padding: 34px 16px;
+		border-radius: 12px;
+		position: relative;
+		@include p-before(48px, 4px){
+			background: #000;
+			border-radius: 50px;
+			top: 8px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		@include p-after(134px, 5px){
+			background: #000;
+			border-radius: 50px;
+			bottom: 8px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		@include mq(md-min){
+			display: none;
+		}
+		&-heading{
+			@include flex(between, center);
+			@include font-size(16);
+			margin-bottom: 16px;
+			.txt-search{
+				@include font-size(14);
+				color: #0072F8;
+				border: none;
+				outline: 0;
+				font-weight: 800;
+				background: transparent;
+			}
+		}
+		&-ttl{
+			font-weight: 800;
+		}
+		&-cancel{
+			width: 24px;
+			height: 24px;
+			border: none;
+			outline: 0;
+			padding: 0;
+			background: none;
+		}
+		&-dl{
+			margin-bottom: 16px;
+			padding-bottom: 16px;
+			border-bottom: 1px solid #E2E8F0;
+			&:last-child{
+				margin-bottom: 0;
+				padding-bottom: 0;
+			}
+		}
+		&-dt{
+			@include font-size(14);
+			font-weight: 800;
+			margin-bottom: 10px;
+		}
+		&-dd{
+			.box-selected{
+				padding: 0;
+				&__heading{
+					padding: 0;
+					margin-bottom: 16px;
+					.c-ttl__04{
+						color: #F5601B;
+					}
+				}
+			}
+		}
+
+		.scroll{
+			max-height: 85vh;
+			overflow-y: auto;
+		}
+	}
 }
 
+
+.fillter-acc{
+	border-bottom: 1px solid #E2E8F0;
+	&__label{
+		@include font-size(14);
+		color: #F5601B;
+		font-weight: 700;
+		padding: 16px 0;
+		position: relative;
+		@include p-after(20px, 20px){
+			background: url(../img/common/arrow-down-gray.png) no-repeat center/100%;
+			top: 13px;
+			right: 0;
+			@include smooth-transition;
+		}
+	}
+	&__content{
+		display: none;
+		padding-bottom: 16px;
+	}
+	&.is-active{
+		.fillter-acc{
+			&__label{
+				&:after{
+					transform: rotate(180deg);
+				}
+			}
+		}
+	}
+}
 
 .c-tabs{
 	li{
@@ -839,44 +953,49 @@
 
 .tabs-content{
 	display: none;
-	padding: 19px 16px;
+	@include mq(md-min){
+		padding: 19px 16px;
+	}
 	&.current{
 		display: inherit;
 	}
-	.list-skills{
-		@include flex(0, 0, wrap);
-		gap: 16px;
-		li{
-			.txt-checkbox{
-				padding: 8px 25px;
-				border: 1px solid #D2DFFF;
+}
+.list-skills{
+	@include flex(0, 0, wrap);
+	gap: 16px;
+	@include mq{
+		gap: 10px;
+	}
+	li{
+		.txt-checkbox{
+			padding: 8px 25px;
+			border: 1px solid #D2DFFF;
+			border-radius: 30px;
+			@include font-size(14);
+			font-weight: 600;
+			position: relative;
+			display: inline-block;
+			cursor: pointer;
+			@include p-before(calc(100% - 2px), calc(100% - 2px)){
+				background: #FFF1ED;
+				top: 1px;
+				left: 1px;
 				border-radius: 30px;
-				@include font-size(14);
-				font-weight: 600;
-				position: relative;
-				display: inline-block;
-				cursor: pointer;
-				@include p-before(calc(100% - 2px), calc(100% - 2px)){
-					background: #FFF1ED;
-					top: 1px;
-					left: 1px;
-					border-radius: 30px;
-					opacity: 0;
-					visibility: hidden;
-				}
+				opacity: 0;
+				visibility: hidden;
 			}
-			input:checked + .txt-checkbox{
-				background: linear-gradient(358.91deg, #FC4A1A 0.41%, #FFC6AD 99.18%),
-				linear-gradient(0deg, #FFF1ED, #FFF1ED);	
-				border-color: #fff;
-				span{
-					position: relative;
-					z-index: 2;
-				}
-				&::before{
-					opacity: 1;
-					visibility: visible;
-				}
+		}
+		input:checked + .txt-checkbox{
+			background: linear-gradient(358.91deg, #FC4A1A 0.41%, #FFC6AD 99.18%),
+			linear-gradient(0deg, #FFF1ED, #FFF1ED);	
+			border-color: #fff;
+			span{
+				position: relative;
+				z-index: 2;
+			}
+			&::before{
+				opacity: 1;
+				visibility: visible;
 			}
 		}
 	}
@@ -930,13 +1049,82 @@
 			}
 		}
 	}
+
+	&--styles02{
+		position: absolute;
+		top: 50px;
+		left: 0;
+		padding: 0 12px;
+		width: 87%;
+		overflow-x: auto;
+		/* custom scrollbar */
+		&::-webkit-scrollbar {
+			width: 20px;
+		}
+
+		&::-webkit-scrollbar-track {
+			background-color: transparent;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background-color: #d6dee1;
+			border-radius: 20px;
+			border: 6px solid transparent;
+			background-clip: content-box;
+		}
+
+		&::-webkit-scrollbar-thumb:hover {
+			background-color: #a8bbbf;
+		}
+		.box-selected{
+			&__result{
+				flex-wrap: nowrap;
+				white-space: nowrap;
+				li{
+					background: #F1F4F9;
+					border-radius: 30px;
+					padding: 8px 12px;
+					display: inline-flex;
+					align-items: center;
+					justify-content: flex-start;
+					@include font-size(12);
+					color: #000;
+					&::before{
+						display: none;
+					}
+					span{
+						&.btn-detete-selected{
+							display: block;
+							width: 16px;
+							height: 16px;
+							background: url(../img/common/btn-delete-skills.png) no-repeat center/100%;
+							margin-left: 10px;
+							position: relative;
+							z-index: 2;
+							cursor: pointer;
+							@include fn-hover;
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 #fillter{
+	@include mq{
+		top: auto;
+		bottom: 0;
+		align-items: flex-end;
+	}
 	.c-modal{
 		&__wp{
 			padding: 0;
 			max-width: 850px;
+			@include mq{
+				width: 100%;
+				border-radius: 24px 24px 0 0;
+			}
 		}
 	}
 }

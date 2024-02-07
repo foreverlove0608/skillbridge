@@ -84,6 +84,11 @@ Layout
 				@include fn-hover;
 			}
 		}
+		.btn-show-copy{
+			position: relative;
+			top: -2px;
+			margin-left: 6px;
+		}
 	}
 	&__input{
 		position: relative;
@@ -173,4 +178,26 @@ Layout
 			visibility: visible;
 		}
 	}
+	&--styles02{
+		.form-group{
+			&__label{
+				position: static;
+				margin-bottom: 12px;
+			}
+		}
+	}
+}
+
+.mb-0{
+	margin-bottom: 0 !important;
+}
+
+
+.txt-link{
+	@include font-size(16);
+	font-weight: 400;
+	color: #0072F8;
+	position: absolute;
+	top: 24px;
+	right: 30px;
 }
