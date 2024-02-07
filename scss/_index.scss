@@ -962,6 +962,8 @@
 	&--selected{
 		@include font-size(14);
 		line-height: 1.4;
+		height: 360px;
+		overflow-y: auto;
 		label{
 			margin-bottom: 20px;
 			cursor: pointer;

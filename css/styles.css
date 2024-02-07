@@ -1204,9 +1204,6 @@ Layout
 .form-control::-webkit-input-placeholder {
   color: #94A3B8;
 }
-.form-control::-moz-placeholder {
-  color: #94A3B8;
-}
 .form-control:-ms-input-placeholder {
   color: #94A3B8;
 }
@@ -1298,9 +1295,6 @@ Layout
   color: #94A3B8;
 }
 .form-group__input input::-webkit-input-placeholder {
-  color: #94A3B8;
-}
-.form-group__input input::-moz-placeholder {
   color: #94A3B8;
 }
 .form-group__input input:-ms-input-placeholder {
@@ -2013,6 +2007,8 @@ Header
     text-align: center;
     background: rgba(255, 255, 255, 0.96);
     height: 100vh;
+    overflow-y: auto;
+    padding-bottom: 80px;
   }
 }
 .main-header__navGlobal--register-form {
@@ -2589,6 +2585,39 @@ Header
     }
   }
 }
+.btn-logout {
+  position: relative;
+  color: #ED2649;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-pack: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -ms-flex-align: center;
+  -webkit-box-align: center;
+          align-items: center;
+  gap: 0 16px;
+}
+.btn-logout:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: url(../img/common/logout.png) no-repeat center/100%;
+  position: static;
+}
+
+.js-locked {
+  overflow: hidden;
+  -ms-touch-action: none;
+  touch-action: none;
+}
+.js-locked body {
+  -webkit-overflow-scrolling: auto;
+}
+
 .main-footer {
   background: -o-linear-gradient(10.74deg, #F5601B -758.89%, #FF862A 397.15%);
   background: linear-gradient(79.26deg, #F5601B -758.89%, #FF862A 397.15%);
@@ -3577,9 +3606,6 @@ Header
 .c-modal__dd input::-webkit-input-placeholder {
   color: #94A3B8;
 }
-.c-modal__dd input::-moz-placeholder {
-  color: #94A3B8;
-}
 .c-modal__dd input:-ms-input-placeholder {
   color: #94A3B8;
 }
@@ -3960,6 +3986,8 @@ Header
 .tabs-content--selected {
   font-size: 1.4rem;
   line-height: 1.4;
+  height: 360px;
+  overflow-y: auto;
 }
 .tabs-content--selected label {
   margin-bottom: 20px;
@@ -4711,6 +4739,19 @@ Header
   top: 16px;
   left: 16px;
 }
+.engineer-page__list-item a {
+  display: block;
+}
+@media (any-hover: hover) {
+  .engineer-page__list-item a {
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+  }
+  .engineer-page__list-item a:hover {
+    opacity: 0.7;
+  }
+}
 .engineer-page__list-info {
   padding: 10px 15px;
 }
@@ -4969,6 +5010,14 @@ Header
   line-height: 1;
   padding-top: 2px;
 }
+.box-filter--favorite .c-btn__submit {
+  width: 110px;
+}
+@media screen and (max-width: 834px) {
+  .box-filter--favorite .c-btn__submit {
+    height: 40px;
+  }
+}
 
 .c-btn__loadmore {
   width: 260px;
@@ -4987,6 +5036,16 @@ Header
   -webkit-box-align: center;
           align-items: center;
   font-size: 1.6rem;
+}
+@media (any-hover: hover) {
+  .c-btn__loadmore {
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+  }
+  .c-btn__loadmore:hover {
+    opacity: 0.7;
+  }
 }
 
 #page-engineer_favorite .c-flex {
@@ -5586,9 +5645,6 @@ Header
   }
 }
 .register-form__dd .form-group input::-webkit-input-placeholder {
-  color: #94A3B8;
-}
-.register-form__dd .form-group input::-moz-placeholder {
   color: #94A3B8;
 }
 .register-form__dd .form-group input:-ms-input-placeholder {

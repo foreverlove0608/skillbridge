@@ -4,6 +4,7 @@
 $('.main-header__mobile-icon').on('click', function () {
 	$(this).toggleClass("mobile-close");
 	$(".main-header__navGlobal").fadeToggle(300).toggleClass("is-show");
+	$('html').toggleClass('js-locked');
 });
 
 
@@ -334,7 +335,7 @@ $('.fillter-acc__label').click(function () {
 
 
 $('.acc-skills__dt').click(function () {
-	$(this).next().slideToggle();
+	$(this).next().slideToggle(100);
 	$(this).parent().toggleClass('is-active');
 })
 
@@ -361,9 +362,10 @@ $('.box-project__close').click(function (e) {
 	$(this).parent().remove();
 })
 
+
+var id = 2;
 $('.js-add-qualifications').click(function () {
 	// $(this).parent().append(skill_template);
-	var id = 2;
 	id++;
 	$(this).before( `<div class="form-grid form-grid--styles02">
 	<dl class="form-group">
