@@ -5694,13 +5694,18 @@ Header
 .register-form__dd--jobs {
   padding: 0 15px;
 }
+@media screen and (max-width: 834px) {
+  .register-form__dd--jobs {
+    padding: 0 10px;
+  }
+}
 .register-form__dd--jobs .register-form__dd-wp {
   padding-bottom: 25px;
   margin-bottom: 25px;
 }
 @media screen and (max-width: 834px) {
   .register-form__dd--jobs .register-form__dd-wp .form-group {
-    padding: 10px 0;
+    padding: 10px 0 0;
   }
 }
 .register-form__dd-wp {
@@ -5779,6 +5784,7 @@ Header
 @media screen and (max-width: 834px) {
   .btn-add-project {
     font-size: 1.4rem;
+    margin-left: 0;
   }
 }
 .btn-add-project:before {
@@ -5812,6 +5818,7 @@ Header
 @media screen and (max-width: 834px) {
   .btn-submit-project {
     padding: 8px 15px;
+    border-radius: 6px;
   }
 }
 .btn-submit-project:before {
@@ -6017,6 +6024,7 @@ Header
   .box-qualifications .form-grid--styles02 .box-project__close {
     right: 20px;
     bottom: 48px;
+    top: auto;
   }
 }
 
@@ -6045,6 +6053,11 @@ Header
 .project-business .form-group {
   padding-left: 0;
   padding-right: 0;
+}
+@media screen and (max-width: 834px) {
+  .project-business .form-group {
+    padding: 10px 0 0 !important;
+  }
 }
 
 #qualifications .c-modal__wp {
@@ -6287,11 +6300,27 @@ Header
   padding: 10px 14px;
   background: #F1F4F9;
 }
+#register-skill .c-modal__filltersp {
+  padding-bottom: 0;
+}
 #register-skill .c-modal__filltersp::before, #register-skill .c-modal__filltersp:after {
   display: none !important;
 }
+#register-skill .c-modal__filltersp .fillter-acc:first-child {
+  border-top: 1px solid #E2E8F0;
+}
+@media screen and (max-width: 834px) {
+  #register-skill .c-modal__control {
+    padding: 0 15px;
+  }
+}
 #register-skill .c-modal__control .c-modal__submit {
   margin-top: 28px;
+}
+@media screen and (max-width: 834px) {
+  #register-skill .c-modal__control .c-modal__submit {
+    width: 140px;
+  }
 }
 
 /* ====================================================

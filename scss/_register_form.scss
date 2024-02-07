@@ -219,12 +219,15 @@
 		}
 		&--jobs{
 			padding: 0 15px;
+			@include mq{
+				padding: 0 10px;
+			}
 			.register-form__dd-wp{
 				padding-bottom: 25px;
 				margin-bottom: 25px;
 				.form-group{
 					@include mq{
-						padding: 10px 0;
+						padding: 10px 0 0;
 					}
 				}
 			}
@@ -289,6 +292,7 @@
 	margin-left: 24px;
 	@include mq{
 		@include font-size(14);
+		margin-left: 0;
 	}
 	@include p-before(24px, 24px){
 		background: url(../img/common/plus.png) no-repeat center/100%;
@@ -310,6 +314,7 @@
 	border-radius: 12px;
 	@include mq{
 		padding: 8px 15px;
+		border-radius: 6px;
 	}
 	@include p-before(24px, 24px){
 		background: url(../img/common/plus.png) no-repeat center/100%;
@@ -483,6 +488,7 @@
 				@include mq{
 					right: 20px;
 					bottom: 48px;
+					top: auto;
 				}
 			}
 		}
@@ -510,6 +516,9 @@
 	.form-group{
 		padding-left: 0;
 		padding-right: 0;
+		@include mq{
+			padding: 10px 0 0 !important;
+		}
 	}
 }
 
@@ -748,14 +757,26 @@
 		}
 	}
 	.c-modal__filltersp{
+		padding-bottom: 0;
 		&::before, &:after{
 			display: none !important;
+		}
+		.fillter-acc{
+			&:first-child{
+				border-top: 1px solid #E2E8F0;
+			}
 		}
 	}
 	.c-modal{
 		&__control{
+			@include mq{
+				padding: 0 15px;
+			}
 			.c-modal__submit{
 				margin-top: 28px;
+				@include mq{
+					width: 140px;
+				}
 			}
 		}
 	}

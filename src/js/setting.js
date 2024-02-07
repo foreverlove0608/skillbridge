@@ -201,7 +201,11 @@ $('.js-skills-register').click(function (e) {
 $('.js-qualifications').click(function (e) {
 	e.preventDefault();
 	var id = $(this).attr('data-id');
+	$('#qualifications').attr('data-modal', id);
 	$('#qualifications').addClass('is-show');
+
+
+
 });
 
 $('.js-cancel').click(function (e) {
@@ -325,7 +329,7 @@ function updateTotal() {
 
 $('.fillter-acc__label').click(function () {
 	$(this).next().slideToggle();
-	$(this).parent().addClass('is-active');
+	$(this).parent().toggleClass('is-active');
 })
 
 
@@ -359,14 +363,32 @@ $('.box-project__close').click(function (e) {
 
 $('.js-add-qualifications').click(function () {
 	// $(this).parent().append(skill_template);
-	
-	$(this).before( skill_template );
+	var id = 2;
+	id++;
+	$(this).before( `<div class="form-grid form-grid--styles02">
+	<dl class="form-group">
+		<dt class="form-group__label">資格証明書</dt>
+		<dd class="form-group__input">
+			<a href="" class="txt-link js-qualifications" data-id="`+ id +`">参考</a>
+			<input type="text" class="form-control" placeholder="基本情報技術者" id="`+ id +`">
+		</dd>
+	</dl>
+	<dl class="form-group">
+		<dt class="form-group__label">取得日</dt>
+		<dd class="form-group__input">
+			<input type="text" placeholder="2021年06月" class="form-control form-control--date">
+		</dd>
+	</dl>
+	<a href="" class="box-project__close"><img src="../img/common/close-circle-red.png" alt="" width="24"></a>
+</div>` );
 	$('.box-project__close').click(function (e) {
 		e.preventDefault();
 		$(this).parent().remove();
 	})
 	$('.js-qualifications').click(function (e) {
 		e.preventDefault();
+		var id = $(this).attr('data-id');
+		$('#qualifications').attr('data-modal', id);
 		$('#qualifications').addClass('is-show');
 	});
 })
@@ -374,10 +396,11 @@ $('.js-add-qualifications').click(function () {
 
 $('.js-submit-qualifications').click(function (e) {
 	e.preventDefault();
+	var data_modal = $(this).closest('.c-modal').attr('data-modal');
+	console.log(data_modal);
 	$('.qualifications-content__wp input').each(function () {
 		if ($(this).prop('checked')) {
-			$('#' + id).val($(this).val());
-			// _this.val($(this).val());
+			$('#' + data_modal).val($(this).val());
 		}
 	})
 	$('.c-modal').removeClass('is-show');
