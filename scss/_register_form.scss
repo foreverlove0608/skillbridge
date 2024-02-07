@@ -1,0 +1,311 @@
+@use 'vars' as *;
+#page-register_form{
+	background: #F6F8FC;
+}
+.register-form{
+	padding: 32px 0;
+	.inner{
+		max-width: 1130px;
+	}
+	&__wp{
+		background: #fff;
+		background: linear-gradient(90.6deg, #56CCF2 1.48%, #2F80ED 98.04%),
+		linear-gradient(0deg, #FFFFFF, #FFFFFF);
+		border-radius: 16px;
+		overflow: hidden;
+		position: relative;
+		padding: 24px 30px;
+		@include p-before(100%, calc(100% - 6px)){
+			background: #fff;
+			top: 6px;
+			left: 0;
+		}
+	}
+	&__ttl{
+		position: relative;
+		z-index: 2;
+		text-align: center;
+		margin-bottom: 40px;
+		span{
+			width: 100%;
+			display: block;
+			line-height: 1;
+			margin-bottom: 20px;
+		}
+		small{
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			background: #FFF2D4;
+			@include font-size(16);
+			color: #F5601B;
+			padding: 6px 16px;
+			border-radius: 10px;
+			@include p-before(24px, 24px){
+				background: url(../img/common/user.png) no-repeat center/100%;
+				position: static;
+				margin-right: 10px;
+			}
+		}
+	}
+	&__form{
+		position: relative;
+		z-index: 2;
+	}
+	&__dl{
+		margin-bottom: 24px;
+	}
+	&__dt{
+		@include font-size(20);
+		font-weight: 600;
+		color: #F5601B;
+		position: relative;
+		padding-left: 20px;
+		margin-bottom: 15px;
+		@include p-before(4px, 4px){
+			background: $color-main;
+			border-radius: 50%;
+			top: 50%;
+			left: 5px;
+			transform: translateY(-50%);
+		}
+		.txt-link{
+			position: absolute;
+			top: 0;
+			right: 0;
+
+		}
+	}
+	&__dd{
+		.form-group{
+			padding: 20px 15px 0;
+			width: 50%;
+			input{
+				&::placeholder{
+					color: #94A3B8;
+				}
+			}
+			.error{
+				@include font-size(12);
+				color: #ED2649;
+				position: absolute;
+				bottom: -5px;
+				left: 10px;
+				transform: translateY(100%);
+			}
+			.form-control{
+				&--select{
+					color: #94A3B8;
+					background: #fff url(../img/common/chevron-down.png) no-repeat right 15px center/24px 24px
+				}
+			}
+			&--radio{
+				.form-group{
+					&__label{
+						position: static;
+						margin-bottom: 12px;
+						padding: 0
+					}
+					&__input{
+						@include flex(0, 0, wrap);
+						@include font-size(16);
+						label{
+							margin-right: 80px;
+							position: relative;
+							&:last-of-type{
+								margin-right: 0;
+							}
+						}
+						input{
+							width: auto;
+							height: auto;
+							padding: 0;
+							&:checked + .txt-radio{
+								&::after{
+									opacity: 1;
+									visibility: visible;
+								}
+								&::before{
+									border-color: #F5601B;
+								}
+							}
+						}
+					}
+				}
+			}
+			&--upload{
+				width: 100%;
+				.form-group{
+					&__label{
+						padding: 0;
+						margin-bottom: 12px;
+						position: static;
+					}
+				}
+				.form-upload{
+					max-width: 520px;
+					width: 100%;
+					border: 1px dashed #B1BFD0;
+					padding: 30px 20px;
+					&__img{
+						max-width: 102px;
+						margin: 0 auto;
+					}
+					&__caption{
+						text-align: center;
+						& > *{
+							display: block;
+						}
+						span{
+							@include font-size(12);
+							margin-bottom: 10px;
+						}
+						small{
+							@include font-size(8);
+							color: #969DB2;
+						}
+					}
+				}
+			}
+			&--full{
+				width: 100%;
+			}
+		}
+		&--jobs{
+			padding: 0 15px;
+		}
+		&-wp{
+			background: #F6F8FC;
+			border: 1px dashed #E2E8F0;
+			border-radius: 16px;
+			padding: 16px 15px;
+		}
+	}
+}
+
+.form-radio{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+	opacity: 0;
+	cursor: pointer;
+}
+.txt-radio{
+	display: block;
+	position: relative;
+	padding: 3px 0 3px 35px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	cursor: pointer;
+	@include p-before(24px, 24px){
+		border: 1px solid #B1B5C3;
+		border-radius: 50%;
+		top: 0;
+		left: 0;
+	}
+	@include p-after(16px, 16px){
+		background: $color-main;
+		top: 5px;
+		left: 5px;
+		border-radius: 50%;
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+.form-grid{
+	@include flex(0, 0, wrap);
+	margin: 0 -15px;
+}
+
+.btn-add-project{
+
+}
+
+.acc-skills{
+	padding: 0 15px;
+	margin-bottom: 12px;
+	&:last-of-type{
+		margin-bottom: 0;
+	}
+	&__dt{
+		@include font-size(16);
+		padding-left: 30px;
+		margin-bottom: 14px;
+		position: relative;
+		cursor: pointer;
+		@include p-before(24px, 24px){
+			background: url(../img/common/minus-square.png) no-repeat center/100%;
+			top: 50%;
+			transform: translateY(-50%);
+			left: 0;
+		}
+		@include p-before(24px, 24px){
+			background: url(../img/common/ico-plus.png) no-repeat center/100%;
+			top: 50%;
+			transform: translateY(-50%);
+			left: 0;
+		}
+	}
+	&__list{
+		&-item{
+			@include flex(0, center, wrap);
+			margin-bottom: 12px;
+		}
+	}
+	&__dd{
+		padding: 16px 54px;
+		background: #F6F8FC;
+		border: 1px dashed #E2E8F0;
+		border-radius: 16px;
+		display: none;
+		&-left{
+			@include font-size(16);
+			font-weight: 600;
+			width: 240px;
+		}
+		&-checker{
+			.txt-checkbox{
+				cursor: pointer;
+				padding-left: 30px;
+				position: relative;
+				@include p-before(24px, 24px){
+					border-radius: 4px;
+					border: 1px solid #ccc;
+					top: 0;
+					left: 0;
+				}
+				@include p-after(15px, 11px){
+					background: url(../img/common/ico-check-wt.png) no-repeat center/100%;
+					left: 6px;
+					top: 7px;
+					opacity: 0;
+					visibility: hidden;
+				}
+			}
+			input:checked + .txt-checkbox{
+				&::before{
+					background: #2361FF;
+					border-color: #2361FF;
+				}
+				&:after{
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
+		&-right{
+			width: calc(100% - 240px);
+			@include flex();
+			gap: 0 8px;
+			input{
+				width: 100px;
+			}
+		}
+	}
+}
