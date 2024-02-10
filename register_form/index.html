@@ -44,14 +44,14 @@
 			</div>
 		</header>
 		<div class="c-modal" id="login">
-			<span class="c-modal__btn-close"></span>
+			<span class="c-modal__btn-close js-cancel"></span>
 			<div class="c-modal__wp">
 				<form action="" method="post" class="c-modal__form">
 					<h3 class="c-modal__ttl">アカウントでログイン</h3>
 					<dl class="c-modal__dl">
 						<dt class="c-modal__dt">メールアドレス<span>*</span></dt>
 						<dd class="c-modal__dd">
-							<input type="text" placeholder="example@gmail.com">
+							<input type="email" placeholder="example@gmail.com">
 						</dd>
 					</dl>
 					<dl class="c-modal__dl">
@@ -61,14 +61,14 @@
 							<span class="toggle-pass" toggle="#pass-field"></span>
 						</dd>
 					</dl>
-					<div class="c-modal__forget-pass"><a href="#" class="txt-link js-forgetpass">パスワードを忘れた場合</a></div>
+					<div class="c-modal__forget-pass"><a href="#" class="txt-link js-show-modal" data-modal="forget-pass">パスワードを忘れた場合</a></div>
 					<button class="c-modal__submit">ログイン</button>
-					<div class="c-modal__register"><a href="#" class="txt-link js-register">アカウント新規登録</a></div>
+					<div class="c-modal__register"><a href="#" class="txt-link js-show-modal" data-modal="register">アカウント新規登録</a></div>
 				</form>
 			</div>
 		</div>
 		<div class="c-modal" id="register">
-			<span class="c-modal__btn-close"></span>
+			<span class="c-modal__btn-close js-cancel"></span>
 			<div class="c-modal__wp">
 				<form action="" method="post" class="c-modal__form">
 					<h3 class="c-modal__ttl">新規登錄</h3>
@@ -79,12 +79,12 @@
 						</dd>
 					</dl>
 					<button class="c-modal__submit">送信</button>
-					<div class="c-modal__register"><a href="#" class="txt-link js-login">ログイン画面に戻る</a></div>
+					<div class="c-modal__register"><a href="#" class="txt-link js-show-modal" data-modal="login">ログイン画面に戻る</a></div>
 				</form>
 			</div>
 		</div>
 		<div class="c-modal" id="forget-pass">
-			<span class="c-modal__btn-close"></span>
+			<span class="c-modal__btn-close js-cancel"></span>
 			<div class="c-modal__wp">
 				<form action="" method="post" class="c-modal__form">
 					<h3 class="c-modal__ttl">パスワードをお忘れの場合</h3>
@@ -95,7 +95,7 @@
 						</dd>
 					</dl>
 					<button class="c-modal__submit">送信</button>
-					<div class="c-modal__register"><a href="#" class="txt-link js-login">ログイン画面に戻る</a></div>
+					<div class="c-modal__register"><a href="#" class="txt-link js-show-modal" data-modal="login">ログイン画面に戻る</a></div>
 				</form>
 			</div>
 		</div>
@@ -113,7 +113,7 @@
 								<dd class="register-form__dd form-grid">
 									<dl class="form-group">
 										<dt class="form-group__label"><span>*</span>メールアドレス</dt>
-										<dd class="form-group__input">
+										<dd class="form-group__input is-error">
 											<input type="text" class="form-control" placeholder="メールアドレスを入力してください。">
 											<span class="error">* 必須項目ですので、ご入力をお願いいたします。</span>
 										</dd>
@@ -148,7 +148,7 @@
 											</select>
 										</dd>
 									</dl>
-									<dl class="form-group form-group--radio">
+									<dl class="form-group form-group--radio form-group--confirm-job">
 										<dt class="form-group__label">日本で働く希望がありますか</dt>
 										<dd class="form-group__input">
 											<label>
@@ -166,7 +166,7 @@
 										</dd>
 									</dl>
 									<dl class="form-group">
-										<dt class="form-group__label">希望給料</dt>
+										<dt class="form-group__label"><span>*</span>希望給料</dt>
 										<dd class="form-group__input">
 											<input type="text" placeholder="約◯◯億ドン" class="form-control">
 										</dd>
@@ -201,7 +201,7 @@
 										<dt class="form-group__label"><span>*</span>生年月日<a href="#" class="btn-show-copy"><img src="../img/common/ico-note.png" alt="" width="15"></a></dt>
 										<dd class="form-group__input">
 											<img src="../img/common/editor.png" alt="生年月日">
-											<div class="modal-copy" style="display: none;">
+											<div class="modal-copy">
 												<a href="#" class="btn-copy">Copy</a>
 												<div class="modal-copy__txt">
 													<p>20◯◯年、株式会社△△に入社しました。</p>
@@ -216,7 +216,7 @@
 								<dt class="register-form__dt">得意とする分野・スキル</dt>
 								<dd class="register-form__dd form-grid">
 									<dl class="form-group form-group--full form-group--styles02 mbsp-1">
-										<dt class="form-group__label"><span>*</span>得意とする分野・スキル<a href="" class="txt-link js-skills-register">参考</a></dt>
+										<dt class="form-group__label"><span>*</span>得意とする分野・スキル<a href="" class="txt-link js-show-modal" data-modal="register-skill">参考</a></dt>
 										<dd class="form-group__input">
 											<textarea name="" id="register-form__list-skills" cols="30" rows="10" class="form-control form-control--textarea"></textarea>
 										</dd>
@@ -485,7 +485,7 @@
 				<div class="c-modal__wp">
 					<form action="" method="post" class="c-modal__fillter">
 						<h3 class="c-modal__fillter-ttl">得意とする分野・スキル</h3>
-						<span class="c-modal__fillter-close"><img src="../img/common/x-close.png" alt="Close" width="24"></span>
+						<span class="c-modal__fillter-close js-cancel"><img src="../img/common/x-close.png" alt="Close" width="24"></span>
 						<div class="c-modal__fillter-flex pc">
 							<div class="col-type">
 								<h2 class="c-ttl__04">TYPE</h2>

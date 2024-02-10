@@ -1170,6 +1170,9 @@ Layout
     margin-top: 70px;
   }
 }
+.wrapper--index {
+  margin-top: 0;
+}
 
 .inner {
   width: 90%;
@@ -1272,7 +1275,7 @@ Layout
 .form-group__label .btn-show-copy {
   position: relative;
   top: -2px;
-  margin-left: 6px;
+  margin-left: 12px;
 }
 .form-group__input {
   position: relative;
@@ -1316,6 +1319,9 @@ Layout
   position: absolute;
   z-index: 2;
   cursor: pointer;
+}
+.form-group__input.is-error input {
+  border-color: #ED2649;
 }
 .form-group .tooltips-txt {
   color: #000;
@@ -5606,7 +5612,9 @@ Header
   color: #F5601B;
   position: relative;
   padding-left: 20px;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
+  margin-left: 14px;
+  letter-spacing: 1px;
 }
 @media screen and (max-width: 834px) {
   .register-form__dt {
@@ -5642,6 +5650,11 @@ Header
     margin-bottom: 24px;
     padding: 10px;
     width: 100%;
+  }
+}
+@media screen and (min-width: 835px) {
+  .register-form__dd .form-group__label {
+    padding-left: 20px;
   }
 }
 .register-form__dd .form-group input::-webkit-input-placeholder {
@@ -5707,7 +5720,17 @@ Header
 .register-form__dd .form-group--radio .form-group__input input:checked + .txt-radio::before {
   border-color: #F5601B;
 }
+.register-form__dd .form-group--confirm-job {
+  padding-top: 0;
+  padding-left: 16px;
+}
+.register-form__dd .form-group--confirm-job .form-group__label {
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  padding-left: 5px;
+}
 .register-form__dd .form-group--upload {
+  padding-top: 0;
   width: 100%;
 }
 .register-form__dd .form-group--upload .form-group__label {
@@ -6377,6 +6400,61 @@ Header
   #register-skill .c-modal__control .c-modal__submit {
     width: 140px;
   }
+}
+
+.modal-copy {
+  max-width: 524px;
+  height: 186px;
+  -webkit-box-shadow: 2px 2px 10px 0px #7E91D324;
+          box-shadow: 2px 2px 10px 0px #7E91D324;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  z-index: 10;
+  padding: 12px 12px;
+  background: #fff;
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 1.4;
+  display: none;
+}
+.modal-copy p {
+  margin-bottom: 20px;
+}
+.modal-copy p:last-of-type {
+  margin-bottom: 0;
+}
+.modal-copy .btn-copy {
+  width: 100px;
+  height: 32px;
+  font-size: 1.4rem;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(245, 96, 27, 0.1)), to(rgba(255, 134, 42, 0.1)));
+  background: -o-linear-gradient(left, rgba(245, 96, 27, 0.1) 0%, rgba(255, 134, 42, 0.1) 100%);
+  background: linear-gradient(90deg, rgba(245, 96, 27, 0.1) 0%, rgba(255, 134, 42, 0.1) 100%);
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-pack: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -ms-flex-align: center;
+  -webkit-box-align: center;
+          align-items: center;
+  gap: 0 8px;
+  margin-bottom: 10px;
+  color: #F5601B;
+  border-radius: 8px;
+}
+.modal-copy .btn-copy:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: url(../img/common/document-copy.png) no-repeat center/100%;
+  position: relative;
 }
 
 /* ====================================================

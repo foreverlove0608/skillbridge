@@ -27,23 +27,23 @@
 						<li class="main-header__menu-item"><a href="../" class="main-header__link">在籍エンジニア</a></li>
 						<li class="main-header__menu-item"><a href="../" class="main-header__link">サービス紹介</a></li>
 						<li class="main-header__menu-item"><a href="../" class="main-header__link">お問い合わせ</a></li>
-						<li class="main-header__menu-item main-header__menu-item--user js-login"><button class="c-btn__01">ログイン</button></li>
+						<li class="main-header__menu-item main-header__menu-item--user js-show-modal" data-modal="login"><button class="c-btn__01">ログイン</button></li>
 					</ul>
 				</nav>
 				<div class="main-header__user">
-					<button class="c-btn__01 js-login">ログイン</button>
+					<button class="c-btn__01 js-show-modal" data-modal="login">ログイン</button>
 				</div>
 			</div>
 		</header>
 		<div class="c-modal" id="login">
-			<span class="c-modal__btn-close"></span>
+			<span class="c-modal__btn-close js-cancel"></span>
 			<div class="c-modal__wp">
 				<form action="" method="post" class="c-modal__form">
 					<h3 class="c-modal__ttl">アカウントでログイン</h3>
 					<dl class="c-modal__dl">
 						<dt class="c-modal__dt">メールアドレス<span>*</span></dt>
 						<dd class="c-modal__dd">
-							<input type="text" placeholder="example@gmail.com">
+							<input type="email" placeholder="example@gmail.com">
 						</dd>
 					</dl>
 					<dl class="c-modal__dl">
@@ -53,14 +53,14 @@
 							<span class="toggle-pass" toggle="#pass-field"></span>
 						</dd>
 					</dl>
-					<div class="c-modal__forget-pass"><a href="#" class="txt-link js-forgetpass">パスワードを忘れた場合</a></div>
+					<div class="c-modal__forget-pass"><a href="#" class="txt-link js-show-modal" data-modal="forget-pass">パスワードを忘れた場合</a></div>
 					<button class="c-modal__submit">ログイン</button>
-					<div class="c-modal__register"><a href="#" class="txt-link js-register">アカウント新規登録</a></div>
+					<div class="c-modal__register"><a href="#" class="txt-link js-show-modal" data-modal="register">アカウント新規登録</a></div>
 				</form>
 			</div>
 		</div>
 		<div class="c-modal" id="register">
-			<span class="c-modal__btn-close"></span>
+			<span class="c-modal__btn-close js-cancel"></span>
 			<div class="c-modal__wp">
 				<form action="" method="post" class="c-modal__form">
 					<h3 class="c-modal__ttl">新規登錄</h3>
@@ -71,12 +71,12 @@
 						</dd>
 					</dl>
 					<button class="c-modal__submit">送信</button>
-					<div class="c-modal__register"><a href="#" class="txt-link js-login">ログイン画面に戻る</a></div>
+					<div class="c-modal__register"><a href="#" class="txt-link js-show-modal" data-modal="login">ログイン画面に戻る</a></div>
 				</form>
 			</div>
 		</div>
 		<div class="c-modal" id="forget-pass">
-			<span class="c-modal__btn-close"></span>
+			<span class="c-modal__btn-close js-cancel"></span>
 			<div class="c-modal__wp">
 				<form action="" method="post" class="c-modal__form">
 					<h3 class="c-modal__ttl">パスワードをお忘れの場合</h3>
@@ -87,7 +87,7 @@
 						</dd>
 					</dl>
 					<button class="c-modal__submit">送信</button>
-					<div class="c-modal__register"><a href="#" class="txt-link js-login">ログイン画面に戻る</a></div>
+					<div class="c-modal__register"><a href="#" class="txt-link js-show-modal" data-modal="login">ログイン画面に戻る</a></div>
 				</form>
 			</div>
 		</div>

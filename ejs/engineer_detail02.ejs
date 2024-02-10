@@ -2,7 +2,7 @@
 	<div class="inner inner--lg">
 		<div class="engineer-detail__heading">
 			<h1 class="c-ttl__02">エンジニア詳細情報</h1>
-			<a href="#" class="c-btn__pdf"><span>Export PDF</span></a>
+			<a href="#" class="c-btn__pdf js-show-modal" data-modal="notyfication-login"><span>Export PDF</span></a>
 		</div>
 		<div class="engineer-detail__intro">
 			<div class="engineer-detail__intro-img"><img src="<%= RELATIVE_PATH %>img/engineer/img-detail.png" alt="Riko Sato" width=""></div>
@@ -18,7 +18,7 @@
 				</div>
 				<div class="engineer-detail__intro-control">
 					<span class="engineer-detail__intro-favorite"><img src="<%= RELATIVE_PATH %>img/common/ico-far.png" alt=""></span>
-					<button class="c-btn__submit js-notyfi-login">相談する</button>
+					<button class="c-btn__submit js-show-modal" data-modal="notyfication-login">相談する</button>
 				</div>
 			</div>
 		</div>
@@ -379,8 +379,8 @@
 				この機能を使用するにはログインしてください。<br>ありがとう。
 			</div>
 			<div class="c-modal__control">
-				<button class="c-modal__submit c-modal__submit--gray js-close-modal">いいえ</button>
-				<button class="c-modal__submit js-login-success">ログイン</button>
+				<button class="c-modal__submit c-modal__submit--gray js-cancel">いいえ</button>
+				<button class="c-modal__submit js-show-modal" data-modal="login-success">ログイン</button>
 			</div>
 		</form>
 	</div>
@@ -396,7 +396,7 @@
 				ありがとうございます。<br>3営業日以内に連絡します。
 			</div>
 			<div class="c-modal__control">
-				<button class="c-modal__submit js-close-modal">ログイン</button>
+				<button class="c-modal__submit js-cancel">ログイン</button>
 			</div>
 		</form>
 	</div>

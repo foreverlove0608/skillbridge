@@ -13,7 +13,7 @@
 </head>
 <body>
 	<%- include('common/_header'); %>
-	<main id="page-<%= pageData.template %>" class="wrapper">
+	<main id="page-<%= pageData.template %>" class="wrapper <% if(pageData.template == "index"){ %>wrapper--index<% } %>">
 		<%- include(pageData.template, {datalabel:'data'}) %>
 	</main>
 	<%- include('common/_footer'); %>
@@ -27,8 +27,6 @@
 <script src="<%= RELATIVE_PATH %>js/setting.js"></script>
 </body>
 </html>
-
-
 
 
 

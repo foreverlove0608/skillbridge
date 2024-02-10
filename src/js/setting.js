@@ -19,118 +19,9 @@ $(window).scroll(function() {
 
 
 /*----------------------------------------
-	Size
-----------------------------------------*/
-
-// object fit
-$(function () {
-	objectFitImages('.u-img-of');
-});
-
-
-// matchHeight
-jQuery(function ($) {
-	$('.mh').matchHeight();
-	$(window).on("load resize", function () {
-		$('.mh-child').matchHeight();
-	});
-});
-
-
-
-/*----------------------------------------
-	Common Utility
-----------------------------------------*/
-
-// Top page ページ読み込み後のクラス付与
-$(window).on('load',function() {
-	setTimeout(function(){
-		$('.top-mainvisual').addClass('is-active');
-	},1000);
-});
-
-
-// Scroll animation
-$(function(){
-	$(window).scroll(function (){
-		$('.js-scrollin').each(function(){
-			var elemPos = $(this).offset().top;
-			var scroll = $(window).scrollTop();
-			var windowHeight = $(window).height();
-			if (scroll > elemPos - windowHeight + 200){
-				$(this).addClass('is-visible');
-			}
-		});
-	});
-});
-
-
-// Smooth Scroll
-var headerHeight = $('#main-header').outerHeight();
-	
-var urlHash = location.hash;
-if(urlHash) {
-	$('body,html').stop().scrollTop(0);
-	setTimeout(function(){
-		var target = $(urlHash);
-		var position = target.offset().top - headerHeight;
-		$('body,html').stop().animate({scrollTop:position}, 500);
-	}, 100);
-}
-
-$(function(){
-	$('a[href*="#"], area[href*="#"]').not(".noScroll").click(function() {
-		var speed = 400,
-			href = $(this).prop("href"),
-			hrefPageUrl = href.split("#")[0],
-			currentUrl = location.href,
-			currentUrl = currentUrl.split("#")[0];
-
-		if(hrefPageUrl == currentUrl){
-
-			href = href.split("#");
-			href = href.pop();
-			href = "#" + href;
-
-			var target = $(href == "#" || href == "" ? 'html' : href),
-				position = target.offset().top - headerHeight;
-			   $('body,html').stop().animate({scrollTop:position}, 500);
-			return false;
-		}
-
-	});
-});
-
-
-//Footer fixed button
-$(function() {
-	var btn = $('.js-contact');
-	$(window).on('load scroll', function(){
-		if($(this).scrollTop() > 200) {
-			btn.addClass('is-show');
-		}else{
-			btn.removeClass('is-show');
-		}
-	});
-  
-  $(window).on('load scroll', function(){
-	  var height = $(document).height(),
-		  position = window.innerHeight + $(window).scrollTop(),
-		  footer = $(".main-footer").height();
-	  if ( height - position  < footer ){ 
-	  	btn.addClass('absolute');
-	  } else { 
-	  	btn.removeClass('absolute');
-	  }
-  });  
-});
-
-
-/*----------------------------------------
 	Pages
 ----------------------------------------*/
 $(".toggle-pass").click(function() {
-
 	var input = $($(this).attr("toggle"));
 	if (input.attr("type") == "password") {
 	  input.attr("type", "text");
@@ -139,6 +30,9 @@ $(".toggle-pass").click(function() {
 	}
   });
 
+
+
+//js show/hide modal
 $(".js-close-alert").click(function () {
 	$(this).parent().fadeOut(300);
 });
@@ -148,65 +42,11 @@ $(".js-alert").click(function (e) {
 	$('.alert-success').fadeIn(300);
 });
 
-$('.js-login').click(function (e) {
+$('.js-show-modal').click(function (e) {
 	e.preventDefault();
+	var modal_id = $(this).attr('data-modal');
 	$('.c-modal').removeClass('is-show');
-	$('#login').addClass('is-show');
-});
-
-
-$('.js-notyfi-login').click(function (e) {
-	e.preventDefault();
-	$('.c-modal').removeClass('is-show');
-	$('#notyfication-login').addClass('is-show');
-});
-
-$('.js-login-success').click(function (e) {
-	e.preventDefault();
-	$('.c-modal').removeClass('is-show');
-	$('#login-success').addClass('is-show');
-});
-
-$('.js-forgetpass').click(function (e) {
-	e.preventDefault();
-	$('.c-modal').removeClass('is-show');
-	$('#forget-pass').addClass('is-show');
-});
-
-$('.js-register').click(function (e) {
-	e.preventDefault();
-	$('.c-modal').removeClass('is-show');
-	$('#register').addClass('is-show');
-});
-
-$('.js-logout').click(function (e) {
-	e.preventDefault();
-	$('#logout').addClass('is-show');
-});
-
-$('.js-changepass').click(function (e) {
-	e.preventDefault();
-	$('#changepass-success').addClass('is-show');
-});
-
-$('.js-fillter').click(function (e) {
-	e.preventDefault();
-	$('#fillter').addClass('is-show');
-});
-
-$('.js-skills-register').click(function (e) {
-	e.preventDefault();
-	$('#register-skill').addClass('is-show');
-});
-
-$('.js-qualifications').click(function (e) {
-	e.preventDefault();
-	var id = $(this).attr('data-id');
-	$('#qualifications').attr('data-modal', id);
-	$('#qualifications').addClass('is-show');
-
-
-
+	$('#' + modal_id).addClass('is-show');
 });
 
 $('.js-cancel').click(function (e) {
@@ -214,15 +54,77 @@ $('.js-cancel').click(function (e) {
 	$(this).closest('.c-modal').removeClass('is-show');
 });
 
-$('.c-modal__btn-close').click(function (e) {
+// $('.js-login').click(function (e) {
+// 	e.preventDefault();
+// 	$('.c-modal').removeClass('is-show');
+// 	$('#login').addClass('is-show');
+// });
+
+
+// $('.js-notyfi-login').click(function (e) {
+// 	e.preventDefault();
+// 	$('.c-modal').removeClass('is-show');
+// 	$('#notyfication-login').addClass('is-show');
+// });
+
+// $('.js-login-success').click(function (e) {
+// 	e.preventDefault();
+// 	$('.c-modal').removeClass('is-show');
+// 	$('#login-success').addClass('is-show');
+// });
+
+// $('.js-forgetpass').click(function (e) {
+// 	e.preventDefault();
+// 	$('.c-modal').removeClass('is-show');
+// 	$('#forget-pass').addClass('is-show');
+// });
+
+// $('.js-register').click(function (e) {
+// 	e.preventDefault();
+// 	$('.c-modal').removeClass('is-show');
+// 	$('#register').addClass('is-show');
+// });
+
+// $('.js-logout').click(function (e) {
+// 	e.preventDefault();
+// 	$('#logout').addClass('is-show');
+// });
+
+// $('.js-changepass').click(function (e) {
+// 	e.preventDefault();
+// 	$('#changepass-success').addClass('is-show');
+// });
+
+// $('.js-fillter').click(function (e) {
+// 	e.preventDefault();
+// 	$('#fillter').addClass('is-show');
+// });
+
+// $('.js-skills-register').click(function (e) {
+// 	e.preventDefault();
+// 	$('#register-skill').addClass('is-show');
+// });
+
+
+//js add field qualifications
+$('.js-qualifications').click(function (e) {
 	e.preventDefault();
-	$('.c-modal').removeClass('is-show');
+	var id = $(this).attr('data-id');
+	$('#qualifications').attr('data-modal', id);
+	$('#qualifications').addClass('is-show');
 });
 
-$('.js-close-modal').click(function (e) {
-	e.preventDefault();
-	$('.c-modal').removeClass('is-show');
-});
+
+
+// $('.c-modal__btn-close').click(function (e) {
+// 	e.preventDefault();
+// 	$('.c-modal').removeClass('is-show');
+// });
+
+// $('.js-close-modal').click(function (e) {
+// 	e.preventDefault();
+// 	$('.c-modal').removeClass('is-show');
+// });
 
 $('.js-tooltip').on( "mouseenter", function() {
 	$(this).closest('.form-group').addClass('is-show');
