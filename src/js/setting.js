@@ -4,6 +4,7 @@
 $('.main-header__mobile-icon').on('click', function () {
 	$(this).toggleClass("mobile-close");
 	$(".main-header__navGlobal").fadeToggle(300).toggleClass("is-show");
+	$('html').toggleClass('js-locked');
 });
 
 
@@ -18,118 +19,9 @@ $(window).scroll(function() {
 
 
 /*----------------------------------------
-	Size
-----------------------------------------*/
-
-// object fit
-$(function () {
-	objectFitImages('.u-img-of');
-});
-
-
-// matchHeight
-jQuery(function ($) {
-	$('.mh').matchHeight();
-	$(window).on("load resize", function () {
-		$('.mh-child').matchHeight();
-	});
-});
-
-
-
-/*----------------------------------------
-	Common Utility
-----------------------------------------*/
-
-// Top page ページ読み込み後のクラス付与
-$(window).on('load',function() {
-	setTimeout(function(){
-		$('.top-mainvisual').addClass('is-active');
-	},1000);
-});
-
-
-// Scroll animation
-$(function(){
-	$(window).scroll(function (){
-		$('.js-scrollin').each(function(){
-			var elemPos = $(this).offset().top;
-			var scroll = $(window).scrollTop();
-			var windowHeight = $(window).height();
-			if (scroll > elemPos - windowHeight + 200){
-				$(this).addClass('is-visible');
-			}
-		});
-	});
-});
-
-
-// Smooth Scroll
-var headerHeight = $('#main-header').outerHeight();
-	
-var urlHash = location.hash;
-if(urlHash) {
-	$('body,html').stop().scrollTop(0);
-	setTimeout(function(){
-		var target = $(urlHash);
-		var position = target.offset().top - headerHeight;
-		$('body,html').stop().animate({scrollTop:position}, 500);
-	}, 100);
-}
-
-$(function(){
-	$('a[href*="#"], area[href*="#"]').not(".noScroll").click(function() {
-		var speed = 400,
-			href = $(this).prop("href"),
-			hrefPageUrl = href.split("#")[0],
-			currentUrl = location.href,
-			currentUrl = currentUrl.split("#")[0];
-
-		if(hrefPageUrl == currentUrl){
-
-			href = href.split("#");
-			href = href.pop();
-			href = "#" + href;
-
-			var target = $(href == "#" || href == "" ? 'html' : href),
-				position = target.offset().top - headerHeight;
-			   $('body,html').stop().animate({scrollTop:position}, 500);
-			return false;
-		}
-
-	});
-});
-
-
-//Footer fixed button
-$(function() {
-	var btn = $('.js-contact');
-	$(window).on('load scroll', function(){
-		if($(this).scrollTop() > 200) {
-			btn.addClass('is-show');
-		}else{
-			btn.removeClass('is-show');
-		}
-	});
-  
-  $(window).on('load scroll', function(){
-	  var height = $(document).height(),
-		  position = window.innerHeight + $(window).scrollTop(),
-		  footer = $(".main-footer").height();
-	  if ( height - position  < footer ){ 
-	  	btn.addClass('absolute');
-	  } else { 
-	  	btn.removeClass('absolute');
-	  }
-  });  
-});
-
-
-/*----------------------------------------
 	Pages
 ----------------------------------------*/
 $(".toggle-pass").click(function() {
-
 	var input = $($(this).attr("toggle"));
 	if (input.attr("type") == "password") {
 	  input.attr("type", "text");
@@ -138,6 +30,9 @@ $(".toggle-pass").click(function() {
 	}
   });
 
+
+
+//js show/hide modal
 $(".js-close-alert").click(function () {
 	$(this).parent().fadeOut(300);
 });
@@ -147,65 +42,11 @@ $(".js-alert").click(function (e) {
 	$('.alert-success').fadeIn(300);
 });
 
-$('.js-login').click(function (e) {
+$('.js-show-modal').click(function (e) {
 	e.preventDefault();
+	var modal_id = $(this).attr('data-modal');
 	$('.c-modal').removeClass('is-show');
-	$('#login').addClass('is-show');
-});
-
-
-$('.js-notyfi-login').click(function (e) {
-	e.preventDefault();
-	$('.c-modal').removeClass('is-show');
-	$('#notyfication-login').addClass('is-show');
-});
-
-$('.js-login-success').click(function (e) {
-	e.preventDefault();
-	$('.c-modal').removeClass('is-show');
-	$('#login-success').addClass('is-show');
-});
-
-$('.js-forgetpass').click(function (e) {
-	e.preventDefault();
-	$('.c-modal').removeClass('is-show');
-	$('#forget-pass').addClass('is-show');
-});
-
-$('.js-register').click(function (e) {
-	e.preventDefault();
-	$('.c-modal').removeClass('is-show');
-	$('#register').addClass('is-show');
-});
-
-$('.js-logout').click(function (e) {
-	e.preventDefault();
-	$('#logout').addClass('is-show');
-});
-
-$('.js-changepass').click(function (e) {
-	e.preventDefault();
-	$('#changepass-success').addClass('is-show');
-});
-
-$('.js-fillter').click(function (e) {
-	e.preventDefault();
-	$('#fillter').addClass('is-show');
-});
-
-$('.js-skills-register').click(function (e) {
-	e.preventDefault();
-	$('#register-skill').addClass('is-show');
-});
-
-$('.js-qualifications').click(function (e) {
-	e.preventDefault();
-	var id = $(this).attr('data-id');
-	$('#qualifications').attr('data-modal', id);
-	$('#qualifications').addClass('is-show');
-
-
-
+	$('#' + modal_id).addClass('is-show');
 });
 
 $('.js-cancel').click(function (e) {
@@ -213,15 +54,77 @@ $('.js-cancel').click(function (e) {
 	$(this).closest('.c-modal').removeClass('is-show');
 });
 
-$('.c-modal__btn-close').click(function (e) {
+// $('.js-login').click(function (e) {
+// 	e.preventDefault();
+// 	$('.c-modal').removeClass('is-show');
+// 	$('#login').addClass('is-show');
+// });
+
+
+// $('.js-notyfi-login').click(function (e) {
+// 	e.preventDefault();
+// 	$('.c-modal').removeClass('is-show');
+// 	$('#notyfication-login').addClass('is-show');
+// });
+
+// $('.js-login-success').click(function (e) {
+// 	e.preventDefault();
+// 	$('.c-modal').removeClass('is-show');
+// 	$('#login-success').addClass('is-show');
+// });
+
+// $('.js-forgetpass').click(function (e) {
+// 	e.preventDefault();
+// 	$('.c-modal').removeClass('is-show');
+// 	$('#forget-pass').addClass('is-show');
+// });
+
+// $('.js-register').click(function (e) {
+// 	e.preventDefault();
+// 	$('.c-modal').removeClass('is-show');
+// 	$('#register').addClass('is-show');
+// });
+
+// $('.js-logout').click(function (e) {
+// 	e.preventDefault();
+// 	$('#logout').addClass('is-show');
+// });
+
+// $('.js-changepass').click(function (e) {
+// 	e.preventDefault();
+// 	$('#changepass-success').addClass('is-show');
+// });
+
+// $('.js-fillter').click(function (e) {
+// 	e.preventDefault();
+// 	$('#fillter').addClass('is-show');
+// });
+
+// $('.js-skills-register').click(function (e) {
+// 	e.preventDefault();
+// 	$('#register-skill').addClass('is-show');
+// });
+
+
+//js add field qualifications
+$('.js-qualifications').click(function (e) {
 	e.preventDefault();
-	$('.c-modal').removeClass('is-show');
+	var id = $(this).attr('data-id');
+	$('#qualifications').attr('data-modal', id);
+	$('#qualifications').addClass('is-show');
 });
 
-$('.js-close-modal').click(function (e) {
-	e.preventDefault();
-	$('.c-modal').removeClass('is-show');
-});
+
+
+// $('.c-modal__btn-close').click(function (e) {
+// 	e.preventDefault();
+// 	$('.c-modal').removeClass('is-show');
+// });
+
+// $('.js-close-modal').click(function (e) {
+// 	e.preventDefault();
+// 	$('.c-modal').removeClass('is-show');
+// });
 
 $('.js-tooltip').on( "mouseenter", function() {
 	$(this).closest('.form-group').addClass('is-show');
@@ -334,7 +237,7 @@ $('.fillter-acc__label').click(function () {
 
 
 $('.acc-skills__dt').click(function () {
-	$(this).next().slideToggle();
+	$(this).next().slideToggle(100);
 	$(this).parent().toggleClass('is-active');
 })
 
@@ -356,14 +259,119 @@ var skill_template = `<div class="form-grid form-grid--styles02">
 											<a href="" class="box-project__close"><img src="../img/common/close-circle-red.png" alt="" width="24"></a>
 										</div>`;
 
+var project = `<div class="box-project">
+<a href="" class="box-project__close"><img src="../img/common/close-circle-red.png" alt="" width="24"></a>
+<div class="form-grid">
+	<dl class="form-group form-group--full">
+		<dt class="form-group__label">プロジェクト名</dt>
+		<dd class="form-group__input">
+			<input type="text" class="form-control" placeholder="プロジェクト名を入力してください。">
+		</dd>
+	</dl>
+	<dl class="form-group">
+		<dt class="form-group__label">開始</dt>
+		<dd class="form-group__input">
+			<input type="text" class="form-control" placeholder="Select time">
+		</dd>
+	</dl>
+	<dl class="form-group">
+		<dt class="form-group__label">終了</dt>
+		<dd class="form-group__input">
+			<input type="text" class="form-control" placeholder="Select time">
+		</dd>
+	</dl>
+</div>
+<div class="project-business">
+	<h3 class="project-business__ttl"><span>業務内容</span></h3>
+	<dl class="form-group form-group--full form-group--styles02">
+		<dt class="form-group__label"><span>*</span>プロジェクト内容</dt>
+		<dd class="form-group__input">
+			<img src="../img/common/editor-02.png" alt="プロジェクト内容">
+		</dd>
+	</dl>
+	<dl class="form-group form-group--full">
+		<dt class="form-group__label"><span>*</span>組織</dt>
+		<dd class="form-group__input">
+			<img src="../img/common/input-01.png" alt="プロジェクト内容">
+		</dd>
+	</dl>
+	<dl class="form-group form-group--full">
+		<dt class="form-group__label"><span>*</span>組織</dt>
+		<dd class="form-group__input">
+			<img src="../img/common/input-02.png" alt="プロジェクト内容">
+		</dd>
+	</dl>
+	<dl class="form-group form-group--full">
+		<dt class="form-group__label"><span>*</span>役割</dt>
+		<dd class="form-group__input">
+			<img src="../img/common/input-02.png" alt="プロジェクト内容">
+		</dd>
+	</dl>
+	<dl class="form-group form-group--full">
+		<dt class="form-group__label"><span>*</span>開発環境</dt>
+		<dd class="form-group__input">
+			<img src="../img/common/input-03.png" alt="プロジェクト内容">
+		</dd>
+	</dl>
+	<dl class="form-group form-group--full">
+		<dt class="form-group__label"><span>*</span>担当業務</dt>
+		<dd class="form-group__input">
+			<img src="../img/common/input-04.png" alt="担当業務">
+		</dd>
+	</dl>
+</div>
+</div>`;
+
+var project02 = `<div class="register-form__dd-wp form-grid project-content02">
+<a href="" class="box-project__close"><img src="../img/common/close-circle-red.png" alt="" width="24"></a>
+<dl class="form-group form-group--full">
+	<dt class="form-group__label">勤務先</dt>
+	<dd class="form-group__input">
+		<input type="text" placeholder="氏名を入力してください。" class="form-control">
+	</dd>
+</dl>
+<dl class="form-group">
+	<dt class="form-group__label"><span>*</span>勤務先</dt>
+	<dd class="form-group__input">
+		<select name="" id="" class="form-control form-control--select">
+			<option value="いつから">いつから</option>
+			<option value=""></option>
+		</select>
+	</dd>
+</dl>
+<dl class="form-group">
+	<dt class="form-group__label"><span>*</span>終了日</dt>
+	<dd class="form-group__input">
+		<select name="" id="" class="form-control form-control--select">
+			<option value="いつから">いつから</option>
+			<option value=""></option>
+		</select>
+	</dd>
+</dl>
+<dl class="form-group">
+	<dt class="form-group__label">資本金</dt>
+	<dd class="form-group__input">
+		<input type="text" class="form-control" placeholder="資本金を選択してください。">
+	</dd>
+</dl>
+<dl class="form-group">
+	<dt class="form-group__label">資本金</dt>
+	<dd class="form-group__input">
+		<input type="text" class="form-control" placeholder="従業員数を入力してください。">
+	</dd>
+</dl>
+<a href="#" class="btn-add-project mt0">この会社のプロジェクを追加</a>
+</div>`;
+
 $('.box-project__close').click(function (e) {
 	e.preventDefault();
 	$(this).parent().remove();
-})
+});
 
+
+var id = 2;
 $('.js-add-qualifications').click(function () {
 	// $(this).parent().append(skill_template);
-	var id = 2;
 	id++;
 	$(this).before( `<div class="form-grid form-grid--styles02">
 	<dl class="form-group">
@@ -393,6 +401,23 @@ $('.js-add-qualifications').click(function () {
 	});
 })
 
+$('.js-add-project').click(function (e) {
+	e.preventDefault();
+	$(this).before(project);
+	$('.box-project__close').click(function (e) {
+		e.preventDefault();
+		$(this).parent().remove();
+	})
+})
+
+$('.js-add-project02').click(function (e) {
+	e.preventDefault();
+	$(this).before(project02);
+	$('.box-project__close').click(function (e) {
+		e.preventDefault();
+		$(this).parent().remove();
+	})
+})
 
 $('.js-submit-qualifications').click(function (e) {
 	e.preventDefault();

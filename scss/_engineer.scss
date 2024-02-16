@@ -39,6 +39,10 @@
 					}
 				}
 			}
+			a{
+				display: block;
+				@include fn-hover;
+			}
 		}
 		&-info{
 			padding: 10px 15px;
@@ -222,6 +226,15 @@
 			padding-top: 2px;
 		}
 	}
+
+	&--favorite{
+		.c-btn__submit{
+			width: 110px;
+			@include mq{
+				height: 40px;
+			}
+		}
+	}
 }
 
 
@@ -235,6 +248,7 @@
 		background: #fff;
 		@include flex(center, center);
 		@include font-size(16);
+		@include fn-hover;
 	}
 }
 

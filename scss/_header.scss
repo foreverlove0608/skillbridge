@@ -67,6 +67,8 @@ Header
 			text-align: center;
 			background: rgba(#fff, .96);
 			height: 100vh;
+			overflow-y: auto;
+    		padding-bottom: 80px;
 		}
 
 		&--register-form{
@@ -538,4 +540,22 @@ Header
 	}
 }
 
+.btn-logout{
+	position: relative;
+	color: #ED2649;
+	@include flex(center, center);
+	gap: 0 16px;
+	@include p-before(20px, 20px){
+		background: url(../img/common/logout.png) no-repeat center/100%;
+		position: static;
+	}
+}
 
+.js-locked {
+	overflow: hidden;
+	-ms-touch-action: none;
+	touch-action: none;
+	body {
+		-webkit-overflow-scrolling: auto;
+	}
+}

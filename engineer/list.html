@@ -27,23 +27,23 @@
 						<li class="main-header__menu-item"><a href="../" class="main-header__link">在籍エンジニア</a></li>
 						<li class="main-header__menu-item"><a href="../" class="main-header__link">サービス紹介</a></li>
 						<li class="main-header__menu-item"><a href="../" class="main-header__link">お問い合わせ</a></li>
-						<li class="main-header__menu-item main-header__menu-item--user js-login"><button class="c-btn__01">ログイン</button></li>
+						<li class="main-header__menu-item main-header__menu-item--user js-show-modal" data-modal="login"><button class="c-btn__01">ログイン</button></li>
 					</ul>
 				</nav>
 				<div class="main-header__user">
-					<button class="c-btn__01 js-login">ログイン</button>
+					<button class="c-btn__01 js-show-modal" data-modal="login">ログイン</button>
 				</div>
 			</div>
 		</header>
 		<div class="c-modal" id="login">
-			<span class="c-modal__btn-close"></span>
+			<span class="c-modal__btn-close js-cancel"></span>
 			<div class="c-modal__wp">
 				<form action="" method="post" class="c-modal__form">
 					<h3 class="c-modal__ttl">アカウントでログイン</h3>
 					<dl class="c-modal__dl">
 						<dt class="c-modal__dt">メールアドレス<span>*</span></dt>
 						<dd class="c-modal__dd">
-							<input type="text" placeholder="example@gmail.com">
+							<input type="email" placeholder="example@gmail.com">
 						</dd>
 					</dl>
 					<dl class="c-modal__dl">
@@ -53,14 +53,14 @@
 							<span class="toggle-pass" toggle="#pass-field"></span>
 						</dd>
 					</dl>
-					<div class="c-modal__forget-pass"><a href="#" class="txt-link js-forgetpass">パスワードを忘れた場合</a></div>
+					<div class="c-modal__forget-pass"><a href="#" class="txt-link js-show-modal" data-modal="forget-pass">パスワードを忘れた場合</a></div>
 					<button class="c-modal__submit">ログイン</button>
-					<div class="c-modal__register"><a href="#" class="txt-link js-register">アカウント新規登録</a></div>
+					<div class="c-modal__register"><a href="#" class="txt-link js-show-modal" data-modal="register">アカウント新規登録</a></div>
 				</form>
 			</div>
 		</div>
 		<div class="c-modal" id="register">
-			<span class="c-modal__btn-close"></span>
+			<span class="c-modal__btn-close js-cancel"></span>
 			<div class="c-modal__wp">
 				<form action="" method="post" class="c-modal__form">
 					<h3 class="c-modal__ttl">新規登錄</h3>
@@ -71,12 +71,12 @@
 						</dd>
 					</dl>
 					<button class="c-modal__submit">送信</button>
-					<div class="c-modal__register"><a href="#" class="txt-link js-login">ログイン画面に戻る</a></div>
+					<div class="c-modal__register"><a href="#" class="txt-link js-show-modal" data-modal="login">ログイン画面に戻る</a></div>
 				</form>
 			</div>
 		</div>
 		<div class="c-modal" id="forget-pass">
-			<span class="c-modal__btn-close"></span>
+			<span class="c-modal__btn-close js-cancel"></span>
 			<div class="c-modal__wp">
 				<form action="" method="post" class="c-modal__form">
 					<h3 class="c-modal__ttl">パスワードをお忘れの場合</h3>
@@ -87,7 +87,7 @@
 						</dd>
 					</dl>
 					<button class="c-modal__submit">送信</button>
-					<div class="c-modal__register"><a href="#" class="txt-link js-login">ログイン画面に戻る</a></div>
+					<div class="c-modal__register"><a href="#" class="txt-link js-show-modal" data-modal="login">ログイン画面に戻る</a></div>
 				</form>
 			</div>
 		</div>
@@ -108,153 +108,169 @@
 						</div>
 						<div class="box-filter__skill">
 							<span class="box-filter__label">スキルで探す<span class="qty-submit"></span></span>
-							<div class="form-control form-control--select js-fillter"></div>
+							<div class="form-control form-control--select js-show-modal" data-modal="fillter"></div>
 							<div class="box-selected box-selected--styles02">
 								<ul class="box-selected__result"></ul>
 							</div>
 						</div>
 						<button class="c-btn__submit">検索</button>
-						<button class="box-filter__btn js-fillter sp">
+						<button class="box-filter__btn js-show-modal sp" data-modal="fillter">
 							<span class="ico"><img src="../img/common/ico-filter.png" alt="" width="16"></span>
 							<span class="qty">3</span>
 						</button>
 					</div>
 					<ul class="engineer-page__list">
 						<li class="engineer-page__list-item">
-							<div class="engineer-page__list-img">
-								<img src="../img/engineer/img-01.jpg" alt="Ren Takahashi">
-							</div>
-							<div class="engineer-page__list-info">
-								<h2 class="engineer-page__list-name">Ren Takahashi</h2>
-								<div class="engineer-page__list-desc">
-									<p><span class="exp">25歳</span><span>Edogawa, Tokyo</span></p>
-									<p>日本で勤務：可</p>
+							<a href="/engineer/detail.html">
+								<div class="engineer-page__list-img">
+									<img src="../img/engineer/img-01.jpg" alt="Ren Takahashi">
 								</div>
-								<ul class="engineer-page__list-skills">
-									<li>HTML</li>
-									<li>CSS</li>
-									<li>C++</li>
-								</ul>
-							</div>
+								<div class="engineer-page__list-info">
+									<h2 class="engineer-page__list-name">Ren Takahashi</h2>
+									<div class="engineer-page__list-desc">
+										<p><span class="exp">25歳</span><span>Edogawa, Tokyo</span></p>
+										<p>日本で勤務：可</p>
+									</div>
+									<ul class="engineer-page__list-skills">
+										<li>HTML</li>
+										<li>CSS</li>
+										<li>C++</li>
+									</ul>
+								</div>
+							</a>
 						</li>
 						<li class="engineer-page__list-item is-far">
-							<div class="engineer-page__list-img">
-								<img src="../img/engineer/img-01.jpg" alt="Ren Takahashi">
-							</div>
-							<div class="engineer-page__list-info">
-								<h2 class="engineer-page__list-name">Ren Takahashi</h2>
-								<div class="engineer-page__list-desc">
-									<p><span class="exp">25歳</span><span>Edogawa, Tokyo</span></p>
-									<p>日本で勤務：可</p>
+							<a href="/engineer/detail.html">
+								<div class="engineer-page__list-img">
+									<img src="../img/engineer/img-01.jpg" alt="Ren Takahashi">
 								</div>
-								<ul class="engineer-page__list-skills">
-									<li>HTML</li>
-									<li>CSS</li>
-									<li>C++</li>
-								</ul>
-							</div>
+								<div class="engineer-page__list-info">
+									<h2 class="engineer-page__list-name">Ren Takahashi</h2>
+									<div class="engineer-page__list-desc">
+										<p><span class="exp">25歳</span><span>Edogawa, Tokyo</span></p>
+										<p>日本で勤務：可</p>
+									</div>
+									<ul class="engineer-page__list-skills">
+										<li>HTML</li>
+										<li>CSS</li>
+										<li>C++</li>
+									</ul>
+								</div>
+							</a>
 						</li>
 						<li class="engineer-page__list-item">
-							<div class="engineer-page__list-img">
-								<img src="../img/engineer/img-01.jpg" alt="Ren Takahashi">
-							</div>
-							<div class="engineer-page__list-info">
-								<h2 class="engineer-page__list-name">Ren Takahashi</h2>
-								<div class="engineer-page__list-desc">
-									<p><span class="exp">25歳</span><span>Edogawa, Tokyo</span></p>
-									<p>日本で勤務：可</p>
+							<a href="/engineer/detail.html">
+								<div class="engineer-page__list-img">
+									<img src="../img/engineer/img-01.jpg" alt="Ren Takahashi">
 								</div>
-								<ul class="engineer-page__list-skills">
-									<li>HTML</li>
-									<li>CSS</li>
-									<li>C++</li>
-								</ul>
-							</div>
+								<div class="engineer-page__list-info">
+									<h2 class="engineer-page__list-name">Ren Takahashi</h2>
+									<div class="engineer-page__list-desc">
+										<p><span class="exp">25歳</span><span>Edogawa, Tokyo</span></p>
+										<p>日本で勤務：可</p>
+									</div>
+									<ul class="engineer-page__list-skills">
+										<li>HTML</li>
+										<li>CSS</li>
+										<li>C++</li>
+									</ul>
+								</div>
+							</a>
 						</li>
 						<li class="engineer-page__list-item">
-							<div class="engineer-page__list-img">
-								<img src="../img/engineer/img-01.jpg" alt="Ren Takahashi">
-							</div>
-							<div class="engineer-page__list-info">
-								<h2 class="engineer-page__list-name">Ren Takahashi</h2>
-								<div class="engineer-page__list-desc">
-									<p><span class="exp">25歳</span><span>Edogawa, Tokyo</span></p>
-									<p>日本で勤務：可</p>
+							<a href="/engineer/detail.html">
+								<div class="engineer-page__list-img">
+									<img src="../img/engineer/img-01.jpg" alt="Ren Takahashi">
 								</div>
-								<ul class="engineer-page__list-skills">
-									<li>HTML</li>
-									<li>CSS</li>
-									<li>C++</li>
-								</ul>
-							</div>
+								<div class="engineer-page__list-info">
+									<h2 class="engineer-page__list-name">Ren Takahashi</h2>
+									<div class="engineer-page__list-desc">
+										<p><span class="exp">25歳</span><span>Edogawa, Tokyo</span></p>
+										<p>日本で勤務：可</p>
+									</div>
+									<ul class="engineer-page__list-skills">
+										<li>HTML</li>
+										<li>CSS</li>
+										<li>C++</li>
+									</ul>
+								</div>
+							</a>
 						</li>
 						<li class="engineer-page__list-item">
-							<div class="engineer-page__list-img">
-								<img src="../img/engineer/img-01.jpg" alt="Ren Takahashi">
-							</div>
-							<div class="engineer-page__list-info">
-								<h2 class="engineer-page__list-name">Ren Takahashi</h2>
-								<div class="engineer-page__list-desc">
-									<p><span class="exp">25歳</span><span>Edogawa, Tokyo</span></p>
-									<p>日本で勤務：可</p>
+							<a href="/engineer/detail.html">
+								<div class="engineer-page__list-img">
+									<img src="../img/engineer/img-01.jpg" alt="Ren Takahashi">
 								</div>
-								<ul class="engineer-page__list-skills">
-									<li>HTML</li>
-									<li>CSS</li>
-									<li>C++</li>
-								</ul>
-							</div>
+								<div class="engineer-page__list-info">
+									<h2 class="engineer-page__list-name">Ren Takahashi</h2>
+									<div class="engineer-page__list-desc">
+										<p><span class="exp">25歳</span><span>Edogawa, Tokyo</span></p>
+										<p>日本で勤務：可</p>
+									</div>
+									<ul class="engineer-page__list-skills">
+										<li>HTML</li>
+										<li>CSS</li>
+										<li>C++</li>
+									</ul>
+								</div>
+							</a>
 						</li>
 						<li class="engineer-page__list-item is-far">
-							<div class="engineer-page__list-img">
-								<img src="../img/engineer/img-01.jpg" alt="Ren Takahashi">
-							</div>
-							<div class="engineer-page__list-info">
-								<h2 class="engineer-page__list-name">Ren Takahashi</h2>
-								<div class="engineer-page__list-desc">
-									<p><span class="exp">25歳</span><span>Edogawa, Tokyo</span></p>
-									<p>日本で勤務：可</p>
+							<a href="/engineer/detail.html">
+								<div class="engineer-page__list-img">
+									<img src="../img/engineer/img-01.jpg" alt="Ren Takahashi">
 								</div>
-								<ul class="engineer-page__list-skills">
-									<li>HTML</li>
-									<li>CSS</li>
-									<li>C++</li>
-								</ul>
-							</div>
+								<div class="engineer-page__list-info">
+									<h2 class="engineer-page__list-name">Ren Takahashi</h2>
+									<div class="engineer-page__list-desc">
+										<p><span class="exp">25歳</span><span>Edogawa, Tokyo</span></p>
+										<p>日本で勤務：可</p>
+									</div>
+									<ul class="engineer-page__list-skills">
+										<li>HTML</li>
+										<li>CSS</li>
+										<li>C++</li>
+									</ul>
+								</div>
+							</a>
 						</li>
-						<li class="engineer-page__list-item">
-							<div class="engineer-page__list-img">
-								<img src="../img/engineer/img-01.jpg" alt="Ren Takahashi">
-							</div>
-							<div class="engineer-page__list-info">
-								<h2 class="engineer-page__list-name">Ren Takahashi</h2>
-								<div class="engineer-page__list-desc">
-									<p><span class="exp">25歳</span><span>Edogawa, Tokyo</span></p>
-									<p>日本で勤務：可</p>
+						<li class="engineer-page__list-item is-far">
+							<a href="/engineer/detail.html">
+								<div class="engineer-page__list-img">
+									<img src="../img/engineer/img-01.jpg" alt="Ren Takahashi">
 								</div>
-								<ul class="engineer-page__list-skills">
-									<li>HTML</li>
-									<li>CSS</li>
-									<li>C++</li>
-								</ul>
-							</div>
+								<div class="engineer-page__list-info">
+									<h2 class="engineer-page__list-name">Ren Takahashi</h2>
+									<div class="engineer-page__list-desc">
+										<p><span class="exp">25歳</span><span>Edogawa, Tokyo</span></p>
+										<p>日本で勤務：可</p>
+									</div>
+									<ul class="engineer-page__list-skills">
+										<li>HTML</li>
+										<li>CSS</li>
+										<li>C++</li>
+									</ul>
+								</div>
+							</a>
 						</li>
-						<li class="engineer-page__list-item">
-							<div class="engineer-page__list-img">
-								<img src="../img/engineer/img-01.jpg" alt="Ren Takahashi">
-							</div>
-							<div class="engineer-page__list-info">
-								<h2 class="engineer-page__list-name">Ren Takahashi</h2>
-								<div class="engineer-page__list-desc">
-									<p><span class="exp">25歳</span><span>Edogawa, Tokyo</span></p>
-									<p>日本で勤務：可</p>
+						<li class="engineer-page__list-item is-far">
+							<a href="/engineer/detail.html">
+								<div class="engineer-page__list-img">
+									<img src="../img/engineer/img-01.jpg" alt="Ren Takahashi">
 								</div>
-								<ul class="engineer-page__list-skills">
-									<li>HTML</li>
-									<li>CSS</li>
-									<li>C++</li>
-								</ul>
-							</div>
+								<div class="engineer-page__list-info">
+									<h2 class="engineer-page__list-name">Ren Takahashi</h2>
+									<div class="engineer-page__list-desc">
+										<p><span class="exp">25歳</span><span>Edogawa, Tokyo</span></p>
+										<p>日本で勤務：可</p>
+									</div>
+									<ul class="engineer-page__list-skills">
+										<li>HTML</li>
+										<li>CSS</li>
+										<li>C++</li>
+									</ul>
+								</div>
+							</a>
 						</li>
 					</ul>
 					<div class="engineer-page__load-more">
@@ -266,7 +282,7 @@
 				<div class="c-modal__wp">
 					<form action="" method="post" class="c-modal__fillter">
 						<h3 class="c-modal__fillter-ttl">得意とする分野・スキル</h3>
-						<span class="c-modal__fillter-close"><img src="../img/common/x-close.png" alt="Close" width="24"></span>
+						<span class="c-modal__fillter-close js-cancel"><img src="../img/common/x-close.png" alt="Close" width="24"></span>
 						<div class="c-modal__fillter-flex">
 							<div class="col-type">
 								<h2 class="c-ttl__04">TYPE</h2>
