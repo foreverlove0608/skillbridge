@@ -1207,6 +1207,9 @@ Layout
 .form-control::-webkit-input-placeholder {
   color: #94A3B8;
 }
+.form-control::-moz-placeholder {
+  color: #94A3B8;
+}
 .form-control:-ms-input-placeholder {
   color: #94A3B8;
 }
@@ -1298,6 +1301,9 @@ Layout
   color: #94A3B8;
 }
 .form-group__input input::-webkit-input-placeholder {
+  color: #94A3B8;
+}
+.form-group__input input::-moz-placeholder {
   color: #94A3B8;
 }
 .form-group__input input:-ms-input-placeholder {
@@ -3612,6 +3618,9 @@ Header
 .c-modal__dd input::-webkit-input-placeholder {
   color: #94A3B8;
 }
+.c-modal__dd input::-moz-placeholder {
+  color: #94A3B8;
+}
 .c-modal__dd input:-ms-input-placeholder {
   color: #94A3B8;
 }
@@ -5664,6 +5673,9 @@ Header
 .register-form__dd .form-group input::-webkit-input-placeholder {
   color: #94A3B8;
 }
+.register-form__dd .form-group input::-moz-placeholder {
+  color: #94A3B8;
+}
 .register-form__dd .form-group input:-ms-input-placeholder {
   color: #94A3B8;
 }
@@ -5891,6 +5903,9 @@ Header
   -ms-flex-align: center;
   -webkit-box-align: center;
           align-items: center;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   background: #0072F81A;
   outline: 0;
   border: none;

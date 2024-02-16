@@ -330,6 +330,7 @@
 	color: #2F80ED;
 	position: relative;
 	@include flex(0, center);
+	display: inline-flex;
 	background: #0072F81A;
 	outline: 0;
 	border: none;

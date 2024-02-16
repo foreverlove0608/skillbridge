@@ -370,8 +370,9 @@ $('.box-project__close').click(function (e) {
 
 
 var id = 2;
-$('.js-add-qualifications').click(function () {
+$('.js-add-qualifications').click(function (e) {
 	// $(this).parent().append(skill_template);
+	e.preventDefault();
 	id++;
 	$(this).before( `<div class="form-grid form-grid--styles02">
 	<dl class="form-group">
