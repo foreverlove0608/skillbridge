@@ -706,14 +706,18 @@
 		outline: 0;
 		border: none;
 		cursor: pointer;
-		@include fn-hover;
 		margin-top: 24px;
 		@include mq{
 			margin-top: 22px;
 		}
 		&--gray{
-			background: #E2E8F0;
+			background: #E2E8F0 !important;
 			color: #0F1A2A;
+		}
+		&:hover{
+			background: linear-gradient(79.26deg, #F5601B -758.89%, #F5601B 397.15%);
+			opacity: 1;
+			transition: .3s ease all;
 		}
 	}
 	&__ico{

@@ -212,7 +212,7 @@ Component
 	@include flex(0, center);
 	padding-left: 60px;
 	letter-spacing: 5px;
-	@include fn-hover;
+	transition: .3s ease all;
 	@include mq(xl){
 		height: 50px;
 		@include font-size(18);
@@ -238,16 +238,11 @@ Component
 
 
 %__c-btn__01--hover{
-	// &:hover{
-	// 	@media (any-hover: hover) {
-	// 		color: $color-main;
-	// 		border-bottom: 2px solid $color-main;
-	// 		&:before{
-	// 			right: -5px;
-	// 			color: $color-main;
-	// 		}
-	// 	}
-	// }
+	&:hover{
+		background: linear-gradient(79.26deg, #F5601B -758.89%, #F5601B 397.15%);
+		opacity: 1;
+		transition: .3s ease all;
+	}
 }
 
 
@@ -313,6 +308,7 @@ Component
 		text-align: center;
 		padding-left: 0;
 		justify-content: center;
+		transition: .3s ease all;
 		@include mq{
 			max-width: 223px;
 		}
@@ -323,11 +319,20 @@ Component
 				height: 4px;
 			}
 		}
+		&:hover{
+			background: $color-main;
+			color: #fff;
+			opacity: 1;
+			&:after{
+				background: url(../img/common/arr-right.png) no-repeat center/100%;
+			}
+		}
 	}
 }
 
 .c-btn{
 	&__submit{
+		@extend %__c-btn__01--hover;
 		@include flex(center, center);
 		background: $color-main;
 		width: 100%;
@@ -339,15 +344,17 @@ Component
 		outline: 0;
 		border: none;
 		cursor: pointer;
-		@include fn-hover;
 		margin-top: 24px;
 		@include mq{
 			margin-top: 22px;
 			height: 48px;
 		}
 		&--gray{
-			background: #E2E8F0;
+			background: #E2E8F0 !important;
 			color: #27364B;
+			&:hover{
+				background: #E2E8F0;
+			}
 		}
 		&--contact{
 			max-width: 190px;

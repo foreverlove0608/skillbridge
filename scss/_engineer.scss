@@ -248,7 +248,11 @@
 		background: #fff;
 		@include flex(center, center);
 		@include font-size(16);
-		@include fn-hover;
+		transition: .3s ease all;
+		&:hover{
+			border-color: #F5601B;
+			color: #F5601B;
+		}
 	}
 }
 
